@@ -8,7 +8,7 @@ var productSchema = new mongoose.Schema({
     
     lastoderrecieved: {date:{type: Date, default: Date.now}, amount: {type: Number, required: true}},
     instock: {type: Number},
-    totalsold: {type: Number}
+    totalsold: {type: Number, default: 0}
 });
 
 module.exports = mongoose.model('Product', productSchema);

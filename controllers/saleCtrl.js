@@ -1,4 +1,5 @@
 var saleModel = require('../models/saleModel');
+var productModel = require('../models/productModel');
 
 
 module.exports = {
@@ -7,7 +8,20 @@ module.exports = {
         var sale = new saleModel(req.body);
         sale.save(function(err, result){
             if(err){res.send(err)}
-            else{res.send(result)}
+            else{
+                for(var i = 0; i < req.body.products.length; i++){
+                    var count = i;
+                    productModel.find({_id: req.body.products[count].product}, function(err1, result1){
+                        var body = req.body.products[count];
+                        var newData = result1[0];
+                        newData.instock -= body.amount;
+                        newData.totalsold += body.amount;
+                        productModel.findByIdAndUpdate( req.body.products[count].product, newData, function(err2, result2){
+                        })
+                    })
+                }
+                res.send(result)
+            }
         });
     },
     
