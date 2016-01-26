@@ -5,7 +5,7 @@ var saleSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now},
     client: {type: mongoose.Schema.Types.ObjectId, ref: 'Client', required: true},
     stylist: {type: mongoose.Schema.Types.ObjectId, ref: 'Stylist', required: true},
-    products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}],
+    products: [{product: {type: mongoose.Schema.Types.ObjectId, ref: 'Product'}, amount: {type: Number, min: 0}}],
     total: {type: Number, required: true}
     
 });
