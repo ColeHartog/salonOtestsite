@@ -12,6 +12,7 @@ var clientCtrl = require('./controllers/clientCtrl');
 var stylistCtrl = require('./controllers/stylistCtrl');
 var appointmentCtrl = require('./controllers/appointmentCtrl');
 var productCtrl = require('./controllers/productCtrl');
+var saleCtrl = require('./controllers/saleCtrl');
 
 
 var app = express();
@@ -48,7 +49,9 @@ app.delete('/api/user/:id', userCtrl.delete);
 //client api
 app.post('/api/client', clientCtrl.create);
 app.get('/api/client', clientCtrl.read);
+app.get('/api/client/pop', clientCtrl.readpop);
 app.get('/api/client/:id', clientCtrl.readid);
+app.get('/api/client/pop/:id', clientCtrl.readidpop);
 app.put('/api/client/:id', clientCtrl.update);
 app.delete('/api/client/:id', clientCtrl.delete);
 
@@ -64,7 +67,9 @@ app.delete('/api/stylist/:id', stylistCtrl.delete);
 //appointment api
 app.post('/api/appointment', appointmentCtrl.create);
 app.get('/api/appointment', appointmentCtrl.read);
+app.get('/api/appointment/pop', appointmentCtrl.readpop);
 app.get('/api/appointment/:id', appointmentCtrl.readid);
+app.get('/api/appointment/pop/:id', appointmentCtrl.readidpop);
 app.put('/api/appointment/:id', appointmentCtrl.update);
 app.delete('/api/appointment/:id', appointmentCtrl.delete);
 
@@ -77,7 +82,14 @@ app.put('/api/product/:id', productCtrl.update);
 app.delete('/api/product/:id', productCtrl.delete);
 
 
-
+//sale api
+app.post('/api/sale', saleCtrl.create);
+app.get('/api/sale', saleCtrl.read);
+app.get('/api/sale/pop', saleCtrl.readpop);
+app.get('/api/sale/:id', saleCtrl.readid);
+app.get('/api/sale/pop/:id', saleCtrl.readidpop);
+app.put('/api/sale/:id', saleCtrl.update);
+app.delete('/api/sale/:id', saleCtrl.delete);
 
 
 

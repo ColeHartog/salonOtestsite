@@ -1,10 +1,11 @@
 var stylistModel = require('../models/stylistModel');
+var mongoose = require('mongoose');
 
 module.exports = {
     
     create: function(req, res){
-        var user = new stylistModel(req.body);
-        user.save(function(err, result){
+        var stylist = new stylistModel(req.body);
+        stylist.save(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         });
@@ -13,10 +14,7 @@ module.exports = {
     read: function(req, res){
         stylistModel.find({}, function(err, result){
             if(err){res.send(err)}
-            else{
-                
-                res.send(result)
-            }
+            else{res.send(result)}
         });
     },
     

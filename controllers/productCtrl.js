@@ -3,8 +3,8 @@ var productModel = require('../models/productModel');
 module.exports = {
     
     create: function(req, res){
-        var user = new productModel(req.body);
-        user.save(function(err, result){
+        var product = new productModel(req.body);
+        product.save(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         });
