@@ -6,7 +6,7 @@ var clientSchema = new mongoose.Schema({
     lastname: {type: String, required: true},
     email: {type: String},
     phone: {type: Number},
-    creationdate: {type: Date, default: Date.now},
+    creationdate: {type: Number, default: Date.now},
     appointments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Appointment'}],
     
 });

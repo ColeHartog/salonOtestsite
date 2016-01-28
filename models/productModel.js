@@ -6,7 +6,7 @@ var productSchema = new mongoose.Schema({
     name: {type: String, required: true},
     price: {type: Number, required: true},
     
-    lastoderrecieved: {date:{type: Date, default: Date.now}, amount: {type: Number, required: true}},
+    lastoderrecieved: {date:{type: Number, default: Date.now}, amount: {type: Number, required: true}},
     instock: {type: Number},
     totalsold: {type: Number, default: 0}
 });

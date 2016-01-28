@@ -13,6 +13,7 @@ var stylistCtrl = require('./controllers/stylistCtrl');
 var appointmentCtrl = require('./controllers/appointmentCtrl');
 var productCtrl = require('./controllers/productCtrl');
 var saleCtrl = require('./controllers/saleCtrl');
+var reportCtrl = require('./controllers/reportCtrl');
 
 
 var app = express();
@@ -36,6 +37,13 @@ mongoose.connect(mongoUri);
 mongoose.connection.once('open', function(){
     console.log('Connected to mongodb\n');
 });
+
+
+//app.post('/api/login', passport.authenticate('local', {
+//    
+//}), function(req, res){
+//    res.status(200)
+//});
 
 
 //user api
@@ -90,6 +98,17 @@ app.get('/api/sale/:id', saleCtrl.readid);
 app.get('/api/sale/pop/:id', saleCtrl.readidpop);
 app.put('/api/sale/:id', saleCtrl.update);
 app.delete('/api/sale/:id', saleCtrl.delete);
+
+
+//report api
+app.get('/api/report/newClients', reportCtrl.newClientsReport);
+app.get('/api/report/newClientsRebooked', reportCtrl.newClientRebookedReport);
+app.get('/api/report/salesToday', reportCtrl.salesTodayReport);
+app.get('/api/report/salesDay/:id', reportCtrl.salesDayReport);
+app.get('/api/report/salesThisMonth', reportCtrl.salesThisMonthReport);
+app.get('/api/report/salesMonth/:id', reportCtrl.salesMonthReport);
+app.get('/api/report/salesThisYear', reportCtrl.salesThisYearReport);
+app.get('/api/report/salesYear/:id', reportCtrl.saleYearReport);
 
 
 

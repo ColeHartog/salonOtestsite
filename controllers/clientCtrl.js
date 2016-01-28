@@ -1,4 +1,5 @@
 var clientModel = require('../models/clientModel');
+var clientParams = ['firstname', 'lastname', 'email', 'phone', 'creationdate', 'appointments'];
 
 module.exports = {
     
@@ -25,6 +26,7 @@ module.exports = {
     },
     
     readid: function(req, res){
+        console.log(req.params.id);
         clientModel.find({_id: req.params.id}, function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}

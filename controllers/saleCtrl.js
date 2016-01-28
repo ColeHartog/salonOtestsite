@@ -33,7 +33,7 @@ module.exports = {
     },
     
     readpop: function(req, res){
-        saleModel.find({}).populate({path: 'client', select: 'firstname lastname -_id'}).populate({path: 'stylist', select: 'firstname lastname -_id'}).populate({path: 'products.product' , select: 'brand name -_id'}).exec(function(err, result){
+        saleModel.find({}).populate({path: 'client', select: 'firstname lastname -_id'}).populate({path: 'stylist', select: 'firstname lastname -_id'}).populate({path: 'products.product' , select: 'brand name -_id'}).populate({path: 'soldby', select: 'username -_id'}).exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })
@@ -47,7 +47,7 @@ module.exports = {
     },
     
     readidpop: function(req, res){
-        saleModel.find({_id: req.params.id}).populate({path: 'client', select: 'firstname lastname -_id'}).populate({path: 'stylist', select: 'firstname lastname -_id'}).populate({path: 'products', select: 'brand name price -_id'}).exec(function(err, result){
+        saleModel.find({_id: req.params.id}).populate({path: 'client', select: 'firstname lastname -_id'}).populate({path: 'stylist', select: 'firstname lastname -_id'}).populate({path: 'products', select: 'brand name price -_id'}).populate({path: 'soldby', select: 'username -_id'}).exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })
