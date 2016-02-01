@@ -2,12 +2,25 @@
 <html ng-app="salonOApp">
     <head>
         <title>Salon O</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Homenaje">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body ng-controller="mainCtrl">
-        Hello World
-        <br>
-        {{test}}
+        <header>
+            <img id="mainLogo" src="images/salon-O_fullround3.png">
+            <span id="routeSelectSpan">
+                <span class="routes hvr-overline-from-center" ui-sref="home">Home</span>
+                <span class="routes hvr-overline-from-center" ui-sref="about">About</span>
+                <span class="routes hvr-overline-from-center" ui-sref="services">Services</span>
+                <span class="routes hvr-overline-from-center" ui-sref="team">Team</span>
+                <span class="routes hvr-overline-from-center" ui-sref="reservation">Reservations</span>
+                <span class="routes hvr-overline-from-center" ui-sref="product">Products</span>
+                <span class="routes hvr-overline-from-center" ui-sref="contact">Contact</span>
+            </span>
+        </header>
+        
+        
+        <div id="ui" ui-view></div>
         
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>

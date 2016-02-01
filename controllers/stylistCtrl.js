@@ -32,7 +32,7 @@ module.exports = {
         });
     },
     
-    delete: function(req, res){
+    destroy: function(req, res){
         stylistModel.findByIdAndRemove(req.params.id, function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}

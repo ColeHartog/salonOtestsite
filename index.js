@@ -14,7 +14,7 @@ var appointmentCtrl = require('./controllers/appointmentCtrl');
 var productCtrl = require('./controllers/productCtrl');
 var saleCtrl = require('./controllers/saleCtrl');
 var reportCtrl = require('./controllers/reportCtrl');
-
+var calanderCtrl = require('./controllers/calanderCtrl');
 
 var app = express();
 
@@ -39,11 +39,11 @@ mongoose.connection.once('open', function(){
 });
 
 
-//app.post('/api/login', passport.authenticate('local', {
-//    
-//}), function(req, res){
-//    res.status(200)
-//});
+app.post('/api/login', passport.authenticate('local', {
+    
+    successRedirect: '/',
+    failureRedirect:'/asdf'
+}));
 
 
 //user api
@@ -51,7 +51,7 @@ app.post('/api/user', userCtrl.create);
 app.get('/api/user', userCtrl.read);
 app.get('/api/user/:id', userCtrl.readid);
 app.put('/api/user/:id', userCtrl.update);
-app.delete('/api/user/:id', userCtrl.delete);
+app.delete('/api/user/:id', userCtrl.destroy);
 
 
 //client api
@@ -61,7 +61,7 @@ app.get('/api/client/pop', clientCtrl.readpop);
 app.get('/api/client/:id', clientCtrl.readid);
 app.get('/api/client/pop/:id', clientCtrl.readidpop);
 app.put('/api/client/:id', clientCtrl.update);
-app.delete('/api/client/:id', clientCtrl.delete);
+app.delete('/api/client/:id', clientCtrl.destroy);
 
 
 // stylist api
@@ -69,7 +69,7 @@ app.post('/api/stylist', stylistCtrl.create);
 app.get('/api/stylist', stylistCtrl.read);
 app.get('/api/stylist/:id', stylistCtrl.readid);
 app.put('/api/stylist/:id', stylistCtrl.update);
-app.delete('/api/stylist/:id', stylistCtrl.delete);
+app.delete('/api/stylist/:id', stylistCtrl.destroy);
 
 
 //appointment api
@@ -79,7 +79,7 @@ app.get('/api/appointment/pop', appointmentCtrl.readpop);
 app.get('/api/appointment/:id', appointmentCtrl.readid);
 app.get('/api/appointment/pop/:id', appointmentCtrl.readidpop);
 app.put('/api/appointment/:id', appointmentCtrl.update);
-app.delete('/api/appointment/:id', appointmentCtrl.delete);
+app.delete('/api/appointment/:id', appointmentCtrl.destroy);
 
 
 //product api
@@ -87,7 +87,7 @@ app.post('/api/product', productCtrl.create);
 app.get('/api/product', productCtrl.read);
 app.get('/api/product/:id', productCtrl.readid);
 app.put('/api/product/:id', productCtrl.update);
-app.delete('/api/product/:id', productCtrl.delete);
+app.delete('/api/product/:id', productCtrl.destroy);
 
 
 //sale api
@@ -97,7 +97,7 @@ app.get('/api/sale/pop', saleCtrl.readpop);
 app.get('/api/sale/:id', saleCtrl.readid);
 app.get('/api/sale/pop/:id', saleCtrl.readidpop);
 app.put('/api/sale/:id', saleCtrl.update);
-app.delete('/api/sale/:id', saleCtrl.delete);
+app.delete('/api/sale/:id', saleCtrl.destroy);
 
 
 //report api
@@ -109,6 +109,14 @@ app.get('/api/report/salesThisMonth', reportCtrl.salesThisMonthReport);
 app.get('/api/report/salesMonth/:id', reportCtrl.salesMonthReport);
 app.get('/api/report/salesThisYear', reportCtrl.salesThisYearReport);
 app.get('/api/report/salesYear/:id', reportCtrl.saleYearReport);
+
+
+//calander api
+app.get('/api/calander/todaysAppointments', calanderCtrl.todaysAppointments);
+app.get('/api/calander/dayAppointments/:id', calanderCtrl.dayAppointments);
+app.get('/api/calander/stylistAppointments/:id', calanderCtrl.stylistAppointments);
+app.get('/api/calander/stylistWeekAppointments/:id', calanderCtrl.stylistWeekAppointments);
+
 
 
 

@@ -47,7 +47,7 @@ module.exports = {
         });
     },
     
-    delete: function(req, res){
+    destroy: function(req, res){
         clientModel.findByIdAndRemove(req.params.id, function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
