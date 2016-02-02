@@ -8,6 +8,17 @@
             Our mission is to achieve a high level of well -being for our guests through the integrity of our art.
         </div>
         
+        <div id="serviceNamesDiv">
+            <span class="serviceNames hvr-overline-from-center" ng-class="{selectedService: service === selectedService}" ng-repeat="service in services track by $index" ng-click="selectService($index)">
+                {{service.name}}
+            </span>
+        </div>
+        
+        <div id="serviceListDiv" ng-show="selectedService">
+            <div class="servicesList" ng-repeat="serviceItem in selectedService.list">
+                {{serviceItem}}
+            </div>
+        </div>
         
     </div>
 </div>

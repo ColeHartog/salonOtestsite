@@ -2,7 +2,7 @@ var products = [
         {
             name: 'Oribe',
             imgUrl: '../images/products/oribe.png',
-            desc: 'Straight from the runway, Oribe is our second line that has made its way from the fashion world to the salon. The beautiful packaging is just the beginning. Oribe was created for the client that wants luxury, while still enjoying the benefits of a color-safe, hydrating product line. One of the finest in hair care products, Oribe boasts long-lasting styles with minimal expertise needed. Salon O is one of the exclusive salons in Utah to carry Oribe.'
+            desc: 'Straight from the runway, Oribe is our second line that has made its way from the fashion world to the salon. The beautiful packaging is just the beginning. Oribe was created for the client that wants luxury, while still enjoying the benefits of a color-safe, hydrating product line. One of the finest in hair care products, Oribe boasts long-lasting styles with minimal expertise needed.'
         },
         {
             name: 'Phytologie',
