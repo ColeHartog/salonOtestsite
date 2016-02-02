@@ -1,3 +1,25 @@
 <div id="productBody">
-    asdf
+    
+    <div id="Products">
+        PRODUCTS
+    </div>
+    
+    <div id="ProductDiv">
+        <div id="productInfo">
+            At Salon O we take pride in choosing product lines that use the highest grade botanical ingrediants. not only do our product lines produce beautiful, healthy scalp and hair, but they are all fully-vested in sustainability.
+        </div>
+        <div id="productNamesDiv">
+            <span class="productNames hvr-overline-from-center" ng-class="{selectedProduct: product === selected}" ng-repeat="product in products track by $index" ng-click="selectProduct($index)">
+                {{ product.name }}
+            </span>
+        </div>
+        <div id="productInfoDiv">
+            <div id="productDesc">
+                {{ selected.desc }}
+            </div>
+            <img id="productImg" src="{{selected.imgUrl}}">
+        </div>
+        
+    </div>
+    
 </div>

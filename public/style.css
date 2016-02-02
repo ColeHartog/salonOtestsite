@@ -89,6 +89,7 @@ header {
     background-position: right;
     background-size: cover;
     color: white;
+    padding-top: 5%;
 }
 
 #teamBody {
@@ -103,6 +104,7 @@ header {
 #productBody {
     width: 100%;
     height: 100%;
+    padding-top: 5%;
     background-image: url('images/product.jpg');
     background-position: right;
     background-size: cover;
@@ -130,10 +132,11 @@ header {
 #WAAS {
     width: 30%;
     min-width: 575px;
-    margin-top: 2%;
+    margin-top: 1%;
     margin-left: 12.5%;
     text-align: center;
     font-size: 1.7em;
+    line-height: 1.3em;
 }
 
 #homeLogo {
@@ -152,12 +155,91 @@ header {
     margin-left: 10%;
     margin-top: 2%;
     background-color: #978693;
-    color: black;
+    color: #222;
     padding: 2.5%;
-    font-size: 2.5em;
+    font-size: 2em;
     text-indent: 1%;
+    line-height: 1.3em;
     
     box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+
+#Products {
+    margin-left: 10%;
+    font-size: 5em;
+}
+
+#ProductDiv {
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 2%;
+    background-color: #978693;
+    font-size: 2em;
+    text-indent: 1%;
+    color: #222;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+
+#productInfo {
+    padding-bottom: 6%;
+    border-bottom: 15px solid white;
+    font-size: 1em;
+    line-height: 1.3em;
+}
+
+#productNamesDiv {
+    margin-top: 6%;
+    text-align: center;
+}
+
+.productNames {
+    padding: 1% 0 0 0;
+    margin: 0 3% 0 3%;
+    text-indent: 0;
+}
+
+.productNames:hover {
+    cursor: pointer;
+}
+
+.selectedProduct {
+    color: white;
+}
+
+#productInfoDiv {
+    margin-top: 6%;
+}
+
+#productDesc {
+    display: inline-block;
+    width: 64%;
+    padding-right: 2%;
+    vertical-align: top;
+    line-height: 1.3em;
+}
+
+#productImg {
+    width: 34%;
+    display: inline-block;
+}
+
+#Services {
+    margin-left: 10%;
+    font-size: 5em;
+}
+
+#ServicesDiv {
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 2%;
+    background-color: #978693;
+    font-size: 2em;
+    text-indent: 1%;
+    color: #222;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+    line-height: 1.3em;
 }
 
 
