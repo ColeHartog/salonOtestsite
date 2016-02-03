@@ -403,15 +403,24 @@ header {
     height: 50%;
 }
 
+#teamFlex {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
 #stylistTeamDiv {
-    height: 25%;
-    width: 72%;
+    flex: 97;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 100%;
     overflow: hidden;
     display: inline-block;
-    position: absolute;
-    top: 54.25%;
-    left: 14%;
-    background-color: rgba(0, 0, 0, .8);
+    background-image: url('images/dark_embroidery.png');
+/*    background-color: rgba(0, 0, 0, .8);*/
+    white-space: nowrap;
 }
 
 .stylistDiv {
@@ -421,32 +430,44 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    vertical-align: top;
     text-align: center;
-    font-size: 4em;
-    padding-top: 14%;
-    margin: 0 2% 0 0%;
+    font-size: 2.5em;
+    margin: 0 1.5% 0 0%;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);
     text-indent: 0;
     color: #eaeaea;
     position: relative;
     left: 0;
-    float: left;
+    transition: width .5s ease;
+}
+
+.stylistDiv:hover {
+    cursor: pointer;
+    color: #978693;
+}
+
+.stylistName {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .arrows {
+    text-align: center;
+    flex: 3;
     font-size: 10em;
     display: inline-block;
-    vertical-align: top;
     text-align: center;
-    width: 2.4%;
-    padding-top: 6%;
     color: #222;
+    padding-top: 3%;
+    transition: all .25s ease;
 }
 
-#rightArrow {
-    margin-left: 95%;
+.arrows:hover {
+    cursor: pointer;
+    color: #eaeaea;
 }
+
 
 
 

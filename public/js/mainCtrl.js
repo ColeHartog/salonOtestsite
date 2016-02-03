@@ -29,11 +29,18 @@ angular.module('salonOApp')
     $scope.getTeam();
     
     $scope.moveStylistLeft = function(){
-        $('.stylistDiv').animate({'left': '-=10%'});
+        
+        if(($('.stylistDiv').last().offset()).left > ($('#stylistTeamDiv').offset()).left + ($('#stylistTeamDiv').width())){
+            $('.stylistDiv').animate({'left': '-=14.5%'}, 300);
+        }
+        
     };
     
     $scope.moveStylistRight = function(){
-        $('.stylistDiv').animate({'left': '+=10%'});
+        
+        if(parseInt($('.stylistDiv').first().css('left')) < 0){
+            $('.stylistDiv').animate({'left': '+=14.5%'}, 300);
+        }
     };
     
     
