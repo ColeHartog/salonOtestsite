@@ -192,9 +192,10 @@ header {
 
 #productInfo {
     padding-bottom: 6%;
-    border-bottom: 15px solid #222;
     font-size: 1em;
     line-height: 1.3em;
+    border-image: url(images/dark_embroidery.png) 15 round;
+    border-image-width: 0 0 15px 0;
 }
 
 #productNamesDiv {
@@ -258,7 +259,8 @@ header {
 
 #servicesInfo {
     padding-bottom: 6%;
-    border-bottom: 15px solid #222;
+    border-image: url(images/dark_embroidery.png) 15 round;
+    border-image-width: 0 0 15px 0;
 }
 
 #serviceNamesDiv {
@@ -340,17 +342,19 @@ header {
 #SIDIV {
     display: inline-block;
     vertical-align: top;
-    height: 80%;
+    height: 54%;
+    width: 49%;
+    position: relative;
 }
 
 .salonInformation {
     line-height: 1.5em;
     font-size: 1.5em;
     background-color: rgba( 255, 255, 255, .8);
-    padding: 2%;
+    padding: 3%;
     color: #222;
     position: absolute;
-    right: 10%;
+    left: 10%;
     display: inline-block;
     vertical-align: top;
     box-shadow: 10px 10px 10px rgba(0,0,0,.5);
@@ -358,11 +362,11 @@ header {
 }
 
 #Caddress {
-    
+    top: 0;
 }
 
 #SIDHdiv {
-    margin-top: 13%;
+    bottom: 0;
 }
 
 #SIdays {
@@ -372,12 +376,6 @@ header {
 #SIhours {
     padding-left: 30px;
     display: inline-block;
-}
-
-#contactMap {
-    position: absolute;
-    right: 5%;
-    bottom: 1%;
 }
 
 #OurTeam {
