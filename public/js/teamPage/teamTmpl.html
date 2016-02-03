@@ -6,11 +6,24 @@
     
     <div id="stylistsMainDiv">
         <div id="leadTeamDiv">
-            
+            <div class="leadTeamClass" id="teamFalecia">
+                <div id="faleciaImg"></div>
+                <div id="faleciaInfo">
+                    Falecia Wilson<br>
+                    Owner<br>
+                </div>
+            </div>
+            <div class="leadTeamClass" id="teamGinni">
+                <div id="ginniImg"></div>
+                <div id="ginniInfo">
+                    Ginni Revuelta<br>
+                    Lead Director
+                </div>
+            </div>
         </div>
         
         <div id="teamFlex">
-            <div class="arrows fa fa-angle-left" ng-click="moveStylistLeft()"></div>
+            <div class="arrows fa fa-angle-left" ng-click="moveStylistRight()"></div>
             <div id="stylistTeamDiv">
                 <div class="stylistDiv" ng-repeat="stylist in team" style="background-image: url({{stylist.pictureUrl}})">
                     <div class="stylistName">
@@ -18,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="arrows fa fa-angle-right" ng-click="moveStylistRight()"></div>
+            <div class="arrows fa fa-angle-right" ng-click="moveStylistLeft()"></div>
         </div>
         
     </div>
