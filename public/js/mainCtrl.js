@@ -28,6 +28,14 @@ angular.module('salonOApp')
     
     $scope.getTeam();
     
+    $scope.stylistDirectiveDivShow = false;
+    
+    $scope.stylistDirectiveDivShowFunc = function(){
+        $scope.stylistDirectiveDivShow = !$scope.stylistDirectiveDivShow;
+    }
+    
+    
+    
     var movingStylistCurrent = false;
     
     $scope.moveStylistLeft = function(){

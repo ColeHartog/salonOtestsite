@@ -546,6 +546,41 @@ header {
     color: #eaeaea;
 }
 
+#stylistDirectiveDiv {
+    position: absolute;
+    display: fixed;
+    width: 40%;
+    height: 52%;
+    background-color: #222;
+    top: 32.5%;
+    left: 30%;
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .8);
+/*    background-image: url(images/dark_embroidery.png);*/
+    opacity: 1;
+}
+
+#SDDX {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#SDDX:hover {
+    cursor: pointer;
+    color: #978693;
+}
+
+#stylistDirectiveDiv.ng-hide-add, #stylistDirectiveDiv.ng-hide-remove {
+    transition: all .25s ease;
+}
+
+#stylistDirectiveDiv.ng-hide {
+    opacity: 0;
+}
+
+
+
 
 
 
