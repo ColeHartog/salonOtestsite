@@ -25,7 +25,7 @@
         <div id="teamFlex">
             <div class="arrows fa fa-angle-left" ng-click="moveStylistRight()"></div>
             <div id="stylistTeamDiv">
-                <div class="stylistDiv" ng-repeat="stylist in team" style="background-image: url({{stylist.pictureUrl}})" ng-click="stylistDirectiveDivShowFunc()">
+                <div class="stylistDiv" ng-repeat="stylist in team" style="background-image: url({{stylist.pictureUrl}})" ng-click="stylistDirectiveDivShowFuncShow(); selectStylist(stylist)">
                     <div class="stylistName">
                         {{stylist.firstname}} {{(stylist.lastname).substr(0,1)}}.
                     </div>
@@ -37,7 +37,8 @@
     </div>
     
     <div id="stylistDirectiveDiv" ng-show="stylistDirectiveDivShow">
-        <div id="SDDX" class="fa fa-times" ng-click="stylistDirectiveDivShowFunc()"></div>
+        <div id="SDDX" class="fa fa-times" ng-click="stylistDirectiveDivShowFuncHide()"></div>
+        <stylist-dir></stylist-dir>
     </div>
     
 </div>

@@ -30,11 +30,13 @@ angular.module('salonOApp')
     
     $scope.stylistDirectiveDivShow = false;
     
-    $scope.stylistDirectiveDivShowFunc = function(){
-        $scope.stylistDirectiveDivShow = !$scope.stylistDirectiveDivShow;
+    $scope.stylistDirectiveDivShowFuncShow = function(){
+        $scope.stylistDirectiveDivShow = true;
     }
     
-    
+    $scope.stylistDirectiveDivShowFuncHide = function(){
+        $scope.stylistDirectiveDivShow = false;
+    }
     
     var movingStylistCurrent = false;
     
@@ -59,8 +61,23 @@ angular.module('salonOApp')
     };
     
     
+    $scope.selectedStylist = {};
     
+    $scope.selectStylist = function(data){
+        $scope.selectedStylist = data;
+        $scope.selectedStylistInfo = data.bio;
+        $scope.selectedStylistType = 'Bio';
+    }
     
+    $scope.selectedStylistInfo = '';
+    
+    $scope.selectSylistInfo = function(data){
+        $scope.selectedStylistInfo = data;
+    }
+    
+    $scope.selectStylistType = function(data){
+        $scope.selectedStylistType = data;
+    }
     
     
     

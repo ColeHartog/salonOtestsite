@@ -1,0 +1,39 @@
+<div id="stylistDirDiv">
+    <div id="SDleftColumn">
+        <div id="SDLImg" style="background-image: url({{selectedStylist.pictureUrl}})"></div>
+        <div id="SDLNav">
+            <div class="SDLNavItems">
+                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.bio); selectStylistType('Bio')">Bio</div>
+            </div>
+            <div class="SDLNavItems">
+                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.services); selectStylistType('Services')">Services</div>
+            </div>
+            <div class="SDLNavItems">
+                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.hours); selectStylistType('Hours')">Hours</div>
+            </div>
+        </div>
+    </div>
+    <div id="SDrightColumn">
+        
+        <div id="SDRBio" ng-show="selectedStylistType === 'Bio'">
+            {{selectedStylistInfo}}
+        </div>
+        
+        <div id="SDRServices" ng-show="selectedStylistType === 'Services'">
+            <div class="SDRSitem" ng-repeat="item in selectedStylistInfo track by $index">
+                {{item}}
+            </div>
+        </div>
+        
+        <div id="SDRHours" ng-show="selectedStylistType === 'Hours'">
+            <div class="SDRHitems" ng-repeat="item in selectedStylistInfo track by $index">
+                <div ng-repeat="(key, value) in item">
+                    {{key}}: {{value.start}} - {{value.end}}
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
