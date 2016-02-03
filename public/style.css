@@ -428,6 +428,7 @@ header {
     flex: 2;
     padding: 5% 0 0 0 ;
     text-align: center;
+    transition: color .25s ease;
 }
 
 #faleciaImg {
@@ -478,6 +479,7 @@ header {
     text-align: center;
     flex: 2;
     padding: 5% 0% 0 0%;
+    transition: color .25s ease;
 }
 
 #teamFlex {
@@ -527,6 +529,7 @@ header {
     position: absolute;
     bottom: 0;
     width: 100%;
+    transition: color .25s ease;
 }
 
 .arrows {
