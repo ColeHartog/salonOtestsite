@@ -8,6 +8,7 @@
 html {
     width: 100%;
     height: 100%;
+    background-color: #222;
 }
 
 body {
@@ -99,6 +100,7 @@ header {
     background-position: right;
     background-size: cover;
     color: white;
+    padding-top: 5%;
 }
 
 #productBody {
@@ -378,6 +380,73 @@ header {
     bottom: 1%;
 }
 
+#OurTeam {
+    font-size: 5em;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    color: #978693;
+    text-shadow: 2px 2px 10px rgba(0,0,0, 1);
+}
+
+#stylistsMainDiv {
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    padding: 2%;
+}
+
+#leadTeamDiv {
+    width: 100%;
+    height: 50%;
+}
+
+#stylistTeamDiv {
+    height: 25%;
+    width: 72%;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    top: 54.25%;
+    left: 14%;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.stylistDiv {
+    display: inline-block;
+    width: 13%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    vertical-align: top;
+    text-align: center;
+    font-size: 4em;
+    padding-top: 14%;
+    margin: 0 2% 0 0%;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, .8);
+    text-indent: 0;
+    color: #eaeaea;
+    position: relative;
+    left: 0;
+    float: left;
+}
+
+.arrows {
+    font-size: 10em;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 2.4%;
+    padding-top: 6%;
+    color: #222;
+}
+
+#rightArrow {
+    margin-left: 95%;
+}
 
 
 
@@ -419,3 +488,26 @@ header {
   left: 0;
   right: 0;
 }
+
+
+
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+	transition:all .5s ease-in-out;
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+}
+
+
+
+
+

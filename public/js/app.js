@@ -1,4 +1,4 @@
-angular.module('salonOApp', ['ui.router'])
+angular.module('salonOApp', ['ui.router', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider){
     
     $stateProvider

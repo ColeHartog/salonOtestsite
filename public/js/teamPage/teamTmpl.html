@@ -1,3 +1,20 @@
 <div id="teamBody">
-    asdf
+    
+    <div id="OurTeam">
+        OUR TEAM
+    </div>
+    
+    <div id="stylistsMainDiv">
+        <div id="leadTeamDiv">
+            
+        </div>
+        <div class="arrows fa fa-angle-left" ng-click="moveStylistLeft()"></div>
+        <div id="rightArrow" class="arrows fa fa-angle-right" ng-click="moveStylistRight()"></div>
+        <div id="stylistTeamDiv">
+            <div class="stylistDiv" ng-repeat="stylist in team" style="background-image: url({{stylist.pictureUrl}})">
+            {{stylist.firstname}} {{(stylist.lastname).substr(0,1)}}.
+            </div>
+        </div>
+    </div>
+    
 </div>

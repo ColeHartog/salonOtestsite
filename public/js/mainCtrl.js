@@ -20,8 +20,21 @@ angular.module('salonOApp')
         $scope.Cinput = {};
     }
     
+    $scope.getTeam = function(){
+        mainService.getTeam().then(function(response){
+            $scope.team = response;
+        })
+    }
     
+    $scope.getTeam();
     
+    $scope.moveStylistLeft = function(){
+        $('.stylistDiv').animate({'left': '-=10%'});
+    };
+    
+    $scope.moveStylistRight = function(){
+        $('.stylistDiv').animate({'left': '+=10%'});
+    };
     
     
     

@@ -49,14 +49,23 @@ var services = [
 ]
 
 angular.module('salonOApp')
-.service('mainService', function(){
+.service('mainService', function($http){
     
     this.getProducts = function(){
         return products;
-    }
+    };
     
     this.getServices = function(){
         return services;
-    }
+    };
+    
+    this.getTeam = function(){
+        return $http({
+            method: "GET",
+            url: "/api/stylist"
+        }).then(function(response){
+            return response.data;
+        });
+    };
     
 })
