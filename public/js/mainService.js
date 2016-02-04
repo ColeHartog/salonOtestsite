@@ -68,4 +68,27 @@ angular.module('salonOApp')
         });
     };
     
+    this.login = function(data){
+        return $http({
+            method: 'POST',
+            url: '/api/login',
+            data: {
+                username: data.username,
+                password: data.password
+            }
+        }).then(function(response){
+            console.log('got request back');
+            return response.data;
+        })
+    };
+    
+    this.checkId = function(){
+        return $http({
+            method: 'GET',
+            url: '/api/logId'
+        }).then(function(response){
+            return response.data;
+        })
+    }
+    
 })

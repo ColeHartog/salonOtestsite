@@ -15,8 +15,9 @@
             <div class="ReservationName">
                 Stylist
             </div>
-            <input class="RSInputs" id="RSUsername" placeholder="Username"><br><input type="password" class="RSInputs" id="RSPassword" placeholder="Password">
-            <div id="RSLoginButt">Log In</div>
+            <input class="RSInputs" id="RSUsername" placeholder="Username" ng-model="stylistInput.username">
+            <input type="password" class="RSInputs" id="RSPassword" placeholder="Password" ng-model="stylistInput.password">
+            <div id="RSLoginButt" ng-click="login(stylistInput)">Log In</div>
         </div>
     </div>
     

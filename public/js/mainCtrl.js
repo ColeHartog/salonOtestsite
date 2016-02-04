@@ -1,5 +1,5 @@
 angular.module('salonOApp')
-.controller('mainCtrl', function($scope, mainService){
+.controller('mainCtrl', function($scope, mainService, $state){
     
     $scope.test = 'scope test';
     
@@ -108,5 +108,13 @@ angular.module('salonOApp')
         });
         
     });
+    
+    $scope.login = function(data){
+        mainService.login(data).then(function(response){
+            if(response.login === true){
+                $state.go('stylistR');
+            }
+        })
+    };
     
 })

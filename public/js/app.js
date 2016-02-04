@@ -37,6 +37,10 @@ angular.module('salonOApp', ['ui.router', 'ngAnimate'])
         templateUrl: './js/contactPage/contactTmpl.html',
         controller: 'mainCtrl'
     })
+    .state('stylistR', {
+        url: '/appointments',
+        templateUrl: './js/reservations/SRpage/SRTmpl.html'
+    })
     
     $urlRouterProvider.otherwise('/');
     

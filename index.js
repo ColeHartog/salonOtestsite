@@ -39,11 +39,22 @@ mongoose.connection.once('open', function(){
 });
 
 
+//app.post('/api/login',
+//    passport.authenticate('local', {
+//    
+//    successRedirect: '/',
+//    failureRedirect:'/asdf'
+//}));
+
+
+
+
 app.post('/api/login', passport.authenticate('local', {
     
-    successRedirect: '/',
-    failureRedirect:'/asdf'
-}));
+    failureRedirect: false
+}), function(req, res){
+    res.send({login: true});
+});
 
 
 //user api
