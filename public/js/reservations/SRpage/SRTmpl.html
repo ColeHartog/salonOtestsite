@@ -1,7 +1,19 @@
-<div>
-    Stylist Side Reservation Page
-    <br>
-    {{test}}
-    <br>
-    <button ng-click="getUsers()">get users</button>
+<div id="appointmentsBody">
+    <div id="appointmentsLeftColumn">
+        <div id="appointmentsCalanderDiv"></div>
+        <div id="appointmentsStlystListDiv">
+            <div id="APPSscrollbarbullshit">
+                <div class="APPstlistListDiv" ng-repeat="stylist in team">
+                    <img class="APPStylistImg" src="{{stylist.pictureUrl}}">
+                    {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="appointmentsRightColumn">
+        <div id="APPBIGcalanderDiv">
+            asdf
+        </div>
+    </div>
+    
 </div>

@@ -91,15 +91,4 @@ angular.module('salonOApp')
         })
     };
     
-    
-    this.getUsers = function(){
-        return $http({
-            method: 'GET',
-            url: '/api/user'
-        }).then(function(response){
-            return response.data;
-        })
-    };
-    
-    
 })

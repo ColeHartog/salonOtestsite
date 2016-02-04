@@ -114,10 +114,4 @@ angular.module('salonOApp')
         })
     };
     
-    $scope.getUsers = function(){
-        mainService.getUsers().then(function(response){
-            console.log(response);
-        })
-    }
-    
 })

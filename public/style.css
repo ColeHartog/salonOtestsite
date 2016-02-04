@@ -124,6 +124,17 @@ header {
     padding-top: 5%;
 }
 
+#appointmentsBody {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/prettywhitedress.jpg');
+    background-position: top;
+    background-size: cover;
+    color: white;
+    padding-top: 5%;
+    display: flex;
+}
+
 #ECET {
     text-align: center;
     width: 35%;
@@ -767,6 +778,72 @@ header {
     color: rgba(2, 2, 2, 1);
 }
 
+#appointmentsLeftColumn {
+    flex: 1;
+    height: 100%;
+    margin: 0 0 2% 10%;
+    display: flex;
+    padding-bottom: 1.5%;
+    flex-direction: column;
+}
+
+#appointmentsRightColumn {
+    flex: 19;
+    height: 100%;
+    margin: 0 10% 0 2%;
+    padding-bottom: 1.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#appointmentsCalanderDiv {
+    font-size: 14px;
+    flex: 1;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+
+#appointmentsStlystListDiv {
+    margin: 10% 0 0 0;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 7px;
+    color: #222;
+    font-size: 1.5em;
+    flex: 19;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#APPBIGcalanderDiv {
+    width: 100%;
+    flex: 1;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+    padding: 2%;
+    color: #222;
+    font-size: 2em;
+}
+
+#APPSscrollbarbullshit {
+    overflow: auto;
+    width: 100%;
+    padding: 0% 5% 2% 5%;
+    flex: 1;
+}
+
+.APPstlistListDiv {
+    line-height: 1.5em;
+    font-size: 1.5em;
+    border-bottom: 1px solid #222;
+}
+
+.APPStylistImg {
+    width: 12%;
+    border-radius: 7px;
+    vertical-align:middle;
+}
 
 
 
