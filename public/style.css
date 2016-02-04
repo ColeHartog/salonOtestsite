@@ -355,7 +355,7 @@ header {
     padding: 3%;
     color: #222;
     position: absolute;
-    left: 10%;
+    left: 25%;
     display: inline-block;
     vertical-align: top;
     box-shadow: 10px 10px 10px rgba(0,0,0,.5);
@@ -443,7 +443,7 @@ header {
 }
 
 #faleciaImg:hover {
-    cursor: pointer;
+    
 }
 
 #faleciaImg:hover ~ #faleciaInfo{
@@ -468,7 +468,7 @@ header {
 }
 
 #ginniImg:hover {
-    cursor: pointer;
+    
 }
 
 #ginniImg:hover ~ #ginniInfo{
@@ -606,6 +606,8 @@ header {
     overflow: auto;
     padding-right: 2%;
     line-height: 1.3em;
+    overflow-x: hidden;
+    position: relative;
 }
 
 #SDLImg {
@@ -654,6 +656,29 @@ header {
     color: #978693;
 }
 
+.StylistInfoSideDivClass {
+    position: absolute;
+    width: 100%;
+    padding-right: 6%;
+}
+
+/*
+.StylistInfoSideDivClass.ng-hide-add {
+    
+}
+*/
+
+.StylistInfoSideDivClass.ng-hide-remove{
+    transition: all 1s;
+}
+
+
+.StylistInfoSideDivClass.ng-hide {
+    transform: translatex(100%);
+}
+
+
+
 #Reservations {
     margin-left: 10%;
     font-size: 5em;
@@ -678,7 +703,7 @@ header {
     text-align: center;
     font-size: 4em;
     color: #222;
-    padding-top: 2%;
+    padding-top: 1%;
     
 }
 
@@ -807,7 +832,6 @@ header {
   opacity: 0;
 }
 
-
-
-
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
