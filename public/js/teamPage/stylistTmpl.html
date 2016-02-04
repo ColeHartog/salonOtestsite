@@ -3,13 +3,13 @@
         <div id="SDLImg" style="background-image: url({{selectedStylist.pictureUrl}})"></div>
         <div id="SDLNav">
             <div class="SDLNavItems">
-                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.bio); selectStylistType('Bio')">Bio</div>
+                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.bio); selectStylistType('Bio')"  ng-class="{selectedType: selectedStylistType === 'Bio'}">Bio</div>
             </div>
             <div class="SDLNavItems">
-                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.services); selectStylistType('Services')">Services</div>
+                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.services); selectStylistType('Services')"  ng-class="{selectedType: selectedStylistType === 'Services'}">Services</div>
             </div>
             <div class="SDLNavItems">
-                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.hours); selectStylistType('Hours')">Hours</div>
+                <div class="SDLNavIs hvr-overline-from-center" ng-click="selectSylistInfo(selectedStylist.hours); selectStylistType('Hours')"  ng-class="{selectedType: selectedStylistType === 'Hours'}">Hours</div>
             </div>
         </div>
     </div>
