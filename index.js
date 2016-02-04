@@ -56,10 +56,19 @@ app.post('/api/login', passport.authenticate('local', {
     res.send({login: true});
 });
 
+app.get('/api/logId', function(req, res, next){
+    if(req.user){
+        console.log(req.user._id);
+        res.send('done bitch');
+    }
+    else {
+        res.send('not loged in');
+    }
+})
 
 //user api
 app.post('/api/user', userCtrl.create);
-app.get('/api/user', userCtrl.read);
+app.get('/api/user', userCtrl.isAuth, userCtrl.read);
 app.get('/api/user/:id', userCtrl.readid);
 app.put('/api/user/:id', userCtrl.update);
 app.delete('/api/user/:id', userCtrl.destroy);

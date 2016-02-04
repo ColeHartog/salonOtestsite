@@ -16,7 +16,6 @@ angular.module('salonOApp')
     };
     
     $scope.formSend = function(){
-        console.log($scope.Cinput);
         $scope.Cinput = {};
     }
     
@@ -87,7 +86,6 @@ angular.module('salonOApp')
          
         var servicedivH = $('#ServicesDiv').innerHeight();
         $('#ServicesDiv').height(servicedivSH);
-        console.log(servicedivSH, servicedivH);
         $('#ServicesDiv').animate({height: servicedivH}, 500, function(){
             servicedivSH = $('#ServicesDiv').height();
             $('#ServicesDiv').height('auto');
@@ -101,7 +99,6 @@ angular.module('salonOApp')
          
         var productDivH = $('#ProductDiv').innerHeight();
         $('#ProductDiv').height(productDivSH);
-        console.log(productDivSH, productDivH);
         $('#ProductDiv').animate({height: productDivH}, 500, function(){
             productDivSH = $('#ProductDiv').height();
             $('#ProductDiv').height('auto');
@@ -116,5 +113,11 @@ angular.module('salonOApp')
             }
         })
     };
+    
+    $scope.getUsers = function(){
+        mainService.getUsers().then(function(response){
+            console.log(response);
+        })
+    }
     
 })

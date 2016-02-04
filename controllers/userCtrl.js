@@ -36,6 +36,18 @@ module.exports = {
             if(err){res.send(err)}
             else{res.send(result)}
         })
+    },
+    
+    isAuth: function(req, res, next){
+        if(req.user){
+            userModel.findById(req.user._id, function(err, result){
+                if(err){res.send(err)}
+                if(result){next()}
+            })
+        }else{
+            res.send('not logged in')
+        }
     }
+    
     
 }
