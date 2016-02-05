@@ -68,7 +68,7 @@ angular.module('salonOApp')
         var topV = $scope.setAppTop(date);
         var heightV = $scope.setAppHeight(duration);
         return {top: topV, height: heightV}
-    }
+    };
     
     $scope.setAppTop = function(date){
         var perc = (Number(date)) - Date.parse($scope.selectedDay);
@@ -84,5 +84,20 @@ angular.module('salonOApp')
         return numS
         
     };
+    
+    $scope.addAppValue = false;
+    
+    $scope.changeAddApp = function(){
+        $scope.addAppValue = !$scope.addAppValue;
+    };
+    
+    $scope.getClients = function(){
+        SRService.getClients().then(function(response){
+            $scope.clients = response;
+        })
+    };
+    
+    $scope.getClients();
+    
     
 })

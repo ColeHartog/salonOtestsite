@@ -13,6 +13,9 @@
     <div id="appointmentsRightColumn">
         <div id="APPBIGcalanderDiv">
             <div id="APPBCdayname">
+                <div id="addNewAppDiv" ng-click="changeAddApp()">
+                    Create New Appointment
+                </div>
                 <div id="leftAngle" class="APPBCdaynamearrows fa fa-angle-left"></div>
                 {{selectedDay}}
                 <div id="rightAngle" class="APPBCdaynamearrows fa fa-angle-right"></div>
@@ -36,5 +39,5 @@
             </div>
         </div>
     </div>
-    
+    <add-app-dir ng-if="addAppValue"></add-app-dir>
 </div>

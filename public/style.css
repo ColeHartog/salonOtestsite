@@ -673,23 +673,6 @@ header {
     padding-right: 6%;
 }
 
-/*
-.StylistInfoSideDivClass.ng-hide-add {
-    
-}
-*/
-
-.StylistInfoSideDivClass.ng-hide-remove{
-    transition: all 1s;
-}
-
-
-.StylistInfoSideDivClass.ng-hide {
-    transform: translatex(100%);
-}
-
-
-
 #Reservations {
     margin-left: 10%;
     font-size: 5em;
@@ -967,10 +950,63 @@ header {
 }
 
 .selectedSlot {
-/*    width: 100%;*/
+    width: 50%;
 }
 
+.selectedSlot > .slotAppointments > .appointment{
+    padding: 2%;
+}
 
+.selectedSlot > .slotName {
+    padding-top: .5%;
+}
+
+add-app-dir {
+    position: fixed;
+    top: 35%;
+    left: 35%;
+    width: 45%;
+    height: 50%;
+    background-color: #222;
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+
+#addNewAppDiv {
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    color: rgba(2,2,2,.5);
+    font-size: .5em;
+    background-color: #978693;
+    padding: .75%;
+    transition: color .25s ease;
+}
+
+#addNewAppDiv:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
+#addAppDiv {
+    width: 100%;
+    height: 100%;
+    color: rgb(253, 253, 253);
+    padding: 3%;
+}
+
+#addAppX {
+    position: absolute;
+    right: 1.5%;
+    top: 2%;
+    transition: color .25s ease;
+}
+
+#addAppX:hover {
+    cursor: pointer;
+    color: #978693;
+}
 
 
 

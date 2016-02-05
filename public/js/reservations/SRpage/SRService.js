@@ -20,4 +20,13 @@ angular.module('salonOApp')
         })
     };
     
+    this.getClients = function(){
+        return $http({
+            method: "GET",
+            url: '/api/client/pop'
+        }).then(function(response){
+            return response.data
+        })
+    };
+    
 })
