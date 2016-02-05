@@ -3,7 +3,7 @@
         <div id="appointmentsCalanderDiv"></div>
         <div id="appointmentsStlystListDiv">
             <div id="APPSscrollbarbullshit">
-                <div class="APPstlistListDiv" ng-repeat="stylist in team">
+                <div class="APPstylistListDiv" ng-repeat="stylist in team" ng-class="{selectedStylist: selectedStylist === stylist._id}" ng-click="selectStylist(stylist._id)">
                     <img class="APPStylistImg" src="{{stylist.pictureUrl}}">
                     {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}.
                 </div>
@@ -12,7 +12,28 @@
     </div>
     <div id="appointmentsRightColumn">
         <div id="APPBIGcalanderDiv">
-            asdf
+            <div id="APPBCdayname">
+                <div id="leftAngle" class="APPBCdaynamearrows fa fa-angle-left"></div>
+                {{selectedDay}}
+                <div id="rightAngle" class="APPBCdaynamearrows fa fa-angle-right"></div>
+            </div>
+            <div id="APPBCCDiv">
+                <div class="calanderSlot" ng-repeat="stylist in team" id="{{stylist._id}}">
+                    <div class="slotName">
+                        {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}.
+                    </div>
+                    <div class="slotAppointments"  ng-class="{selectedSlot: selectedStylist === stylist._id}">
+                        <div class="appointment" ng-repeat="appointment in daysAppointments | filter: stylist._id" ng-style="setProperties({{appointment.date}},{{appointment.duration}})">
+                            {{appointment.client.firstname}} {{appointment.client.lastname}}
+                            <br>
+                            {{appointment.service}}
+                        </div>
+                        <div class="times" ng-repeat="time in times track by $index">
+                        {{time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     

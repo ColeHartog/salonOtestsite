@@ -1,5 +1,6 @@
 var appointmentModel = require('../models/appointmentModel');
 var clientModel = require('../models/clientModel');
+var dateFunc = require('./dateFunc');
 
 module.exports = {
     
@@ -65,6 +66,15 @@ module.exports = {
             if(err){res.send(err)}
             else{res.send(result)}
         })
-    }
+    },
+    
+    todaysAppointments: function(req, res){
+        var startDate = dateFunc.getDayStart(req.params.id);
+        var endDate = dateFunc.getEndDay(req.params.id);
+        appointmentModel.find({$and: [{date: {$gt: startDate}}, {date: {$lt: endDate}}]}).populate({path: 'client', select: 'firstname lastname'}).exec(function(err, result){
+            if(err){res.send(err)}
+            else{res.send(result)}
+        });
+    },
     
 }

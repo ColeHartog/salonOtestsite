@@ -10,4 +10,14 @@ angular.module('salonOApp')
         })
     };
     
+    this.getDaysAppointments = function(date){
+        var pdate = Date.parse(date);
+        return $http({
+            method: 'GET',
+            url: '/api/appointment/day/' + pdate
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
 })
