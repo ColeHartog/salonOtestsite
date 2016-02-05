@@ -896,7 +896,7 @@ header {
     white-space: nowrap;
 /*    display: flex;*/
 /*    flex-direction: row;*/
-    overflow-x: scroll;
+    overflow-x: auto;
 /*    flex-wrap: nowrap;*/
 }
 
@@ -920,7 +920,9 @@ header {
 .slotName {
     height: 3%;
     padding-top: 1%;
-    background-color: #F8B64A;
+/*    background-color: #F8B64A;*/
+    background-color: #636263;
+    color: rgb(253,253,253);
     border-bottom: 1px solid #222;
     z-index: 5;
 }
@@ -940,7 +942,7 @@ header {
 
 .appointment {
     position: absolute;
-    background-color: rgba(142, 241, 255, 1);
+    background-color: #4A6344;
     height: 5%;
 /*    border-radius: 7px;*/
     width: 100%;
@@ -949,6 +951,8 @@ header {
     text-align: left;
     padding: 5%;
     line-height: 1.5;
+    color: rgb(253, 253, 253);
+    font-size: 1.1em;
 }
 
 .times {
@@ -963,7 +967,7 @@ header {
 }
 
 .selectedSlot {
-    background-image: url(images/congruent_pentagon.png);
+/*    width: 100%;*/
 }
 
 

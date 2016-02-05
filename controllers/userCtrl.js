@@ -42,7 +42,9 @@ module.exports = {
         if(req.user){
             userModel.findById(req.user._id, function(err, result){
                 if(err){res.send(err)}
-                if(result){next()}
+                if(result){
+                    next()
+                }
             })
         }else{
             res.send('not logged in')

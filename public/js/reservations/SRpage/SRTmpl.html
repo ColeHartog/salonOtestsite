@@ -18,11 +18,11 @@
                 <div id="rightAngle" class="APPBCdaynamearrows fa fa-angle-right"></div>
             </div>
             <div id="APPBCCDiv">
-                <div class="calanderSlot" ng-repeat="stylist in team" id="{{stylist._id}}">
+                <div class="calanderSlot" ng-repeat="stylist in team" id="{{stylist._id}}" ng-if="selectedStylist === null || selectedStylist === stylist._id"  ng-class="{selectedSlot: selectedStylist === stylist._id}">
                     <div class="slotName">
                         {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}.
                     </div>
-                    <div class="slotAppointments"  ng-class="{selectedSlot: selectedStylist === stylist._id}">
+                    <div class="slotAppointments">
                         <div class="appointment" ng-repeat="appointment in daysAppointments | filter: stylist._id" ng-style="setProperties({{appointment.date}},{{appointment.duration}})">
                             {{appointment.client.firstname}} {{appointment.client.lastname}}
                             <br>

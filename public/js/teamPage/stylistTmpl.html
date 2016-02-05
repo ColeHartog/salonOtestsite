@@ -15,17 +15,17 @@
     </div>
     <div id="SDrightColumn">
         
-        <div id="SDRBio" class="StylistInfoSideDivClass" ng-show="selectedStylistType === 'Bio'">
+        <div id="SDRBio" class="StylistInfoSideDivClass" ng-if="selectedStylistType === 'Bio'">
             {{selectedStylistInfo}}
         </div>
         
-        <div id="SDRServices" class="StylistInfoSideDivClass" ng-show="selectedStylistType === 'Services'">
+        <div id="SDRServices" class="StylistInfoSideDivClass" ng-if="selectedStylistType === 'Services'">
             <div class="SDRSitem" ng-repeat="item in selectedStylistInfo track by $index">
                 {{item}}
             </div>
         </div>
         
-        <div id="SDRHours" class="StylistInfoSideDivClass" ng-show="selectedStylistType === 'Hours'">
+        <div id="SDRHours" class="StylistInfoSideDivClass" ng-if="selectedStylistType === 'Hours'">
             <div class="SDRHitems" ng-repeat="item in selectedStylistInfo track by $index">
                 <div ng-repeat="(key, value) in item">
                     {{key}}: {{value.start}} - {{value.end}}

@@ -5,7 +5,7 @@ angular.module('salonOApp')
     
     $scope.getUsers = function(){
         SRService.getUsers().then(function(response){
-            console.log(response);
+//            console.log(response);
         })
     };
     
@@ -28,11 +28,16 @@ angular.module('salonOApp')
     
     $scope.getTeam();
     
-    $scope.selectedStylist = ' ';
+    $scope.selectedStylist = null;
     
     $scope.selectStylist = function(data){
-        $scope.selectedStylist = data;
-    };-
+        if($scope.selectedStylist !== data){
+            $scope.selectedStylist = data;
+        }
+        else {
+            $scope.selectedStylist = null;
+        }
+    };
     
     $('#leftAngle').on('click', function(){
         var date = $('#appointmentsCalanderDiv').datepicker('getDate');

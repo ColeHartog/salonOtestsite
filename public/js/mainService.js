@@ -77,7 +77,6 @@ angular.module('salonOApp')
                 password: data.password
             }
         }).then(function(response){
-            console.log('got request back');
             return response.data;
         })
     };
