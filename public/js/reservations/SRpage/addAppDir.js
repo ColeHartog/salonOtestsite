@@ -3,6 +3,7 @@ angular.module('salonOApp')
     return{
         
         templateUrl: '/js/reservations/SRpage/addAppTmpl.html',
-        restrict: 'E'
+        restrict: 'E',
+        controller: 'SRCtrl'
     }
 })

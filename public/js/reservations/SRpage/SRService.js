@@ -12,6 +12,7 @@ angular.module('salonOApp')
     
     this.getDaysAppointments = function(date){
         var pdate = Date.parse(date);
+        console.log(pdate);
         return $http({
             method: 'GET',
             url: '/api/appointment/day/' + pdate

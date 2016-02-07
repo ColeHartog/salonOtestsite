@@ -13,10 +13,11 @@ angular.module('salonOApp')
     
     $('#appointmentsCalanderDiv').datepicker({
         defaultDate: 0,
-        autoSize: true,
         onSelect: function(selected){
             $scope.selectedDay = (new Date(selected)).toDateString();
+            console.log((new Date(selected)));
             $scope.$apply();
+            $scope.getDaysAppointments((new Date(selected)));
         }
     });
     
@@ -39,7 +40,7 @@ angular.module('salonOApp')
         }
     };
     
-    $('#leftAngle').on('click', function(){
+    $('#leftAngle').unbind().click(function(){
         var date = $('#appointmentsCalanderDiv').datepicker('getDate');
         date = new Date(Number(date)-86400000);
         $('#appointmentsCalanderDiv').datepicker('setDate', date);
@@ -47,7 +48,7 @@ angular.module('salonOApp')
         $scope.$apply();
         $scope.getDaysAppointments(date);
     });
-    $('#rightAngle').on('click', function(){
+    $('#rightAngle').unbind().click(function(){
         var date = $('#appointmentsCalanderDiv').datepicker('getDate');
         date = new Date(Number(date)+86400000);
         $('#appointmentsCalanderDiv').datepicker('setDate', date);
@@ -98,6 +99,10 @@ angular.module('salonOApp')
     };
     
     $scope.getClients();
+    
+    $scope.logSelection = function(){
+        console.log($scope.clientInput);
+    };
     
     
 })

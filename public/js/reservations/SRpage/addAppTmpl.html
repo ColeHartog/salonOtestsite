@@ -1,6 +1,22 @@
-<div id="addAppDiv">
+<div id="addAppDiv" ng-if="addAppValue">
     <div id="addAppX" class="fa fa-times" ng-click="changeAddApp()"></div>
     
-    {{clients}}
+    <input id="clientSearch" class="AAinput" placeholder="Client Name" list="clients" ng-model="clientInput">
+    <datalist id="clients">
+        <option ng-repeat="client in clients" value="{{client._id}}" label="{{client.firstname}} {{client.lastname}}">
+<!--        {{client.firstname}} {{client.lastname}}-->
+        </option>
+    </datalist>
+    <br>
+    <input class="AAinput" placeholder="firstname" ng-model="clientInput.firstname">
+    {{clientInput}}
+    <button ng-click="logSelection()">log</button>
+    
+    <br>
+    <select name="Stylist">
+        <option ng-repeat="stylist in team" value="{{stylist._id}}">
+            {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}
+        </option>
+    </select>
     
 </div>

@@ -19,7 +19,7 @@ module.exports = {
     },
     
     readpop: function(req, res){
-        clientModel.find({}).populate({path: 'appointments', select: 'date -_id'}).exec(function(err, result){
+        clientModel.find({}).populate({path: 'appointments', select: 'date -_id'}).select('_id firstname lastname').exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })

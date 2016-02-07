@@ -98,7 +98,7 @@ app.get('/api/appointment', appointmentCtrl.read);
 app.get('/api/appointment/pop', appointmentCtrl.readpop);
 app.get('/api/appointment/:id', appointmentCtrl.readid);
 app.get('/api/appointment/pop/:id', appointmentCtrl.readidpop);
-app.get('/api/appointment/day/:id', userCtrl.isAuth, appointmentCtrl.todaysAppointments);
+app.get('/api/appointment/day/:id',  appointmentCtrl.todaysAppointments);
 app.put('/api/appointment/:id', appointmentCtrl.update);
 app.delete('/api/appointment/:id', appointmentCtrl.destroy);
 

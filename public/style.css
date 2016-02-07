@@ -961,17 +961,6 @@ header {
     padding-top: .5%;
 }
 
-add-app-dir {
-    position: fixed;
-    top: 35%;
-    left: 35%;
-    width: 45%;
-    height: 50%;
-    background-color: #222;
-    border-radius: 7px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
-}
-
 #addNewAppDiv {
     display: inline-block;
     position: absolute;
@@ -990,10 +979,18 @@ add-app-dir {
 }
 
 #addAppDiv {
-    width: 100%;
-    height: 100%;
     color: rgb(253, 253, 253);
     padding: 3%;
+    
+    
+    position: fixed;
+    top: 35%;
+    left: 35%;
+    width: 45%;
+    height: 50%;
+    background-color: #222;
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 }
 
 #addAppX {
@@ -1007,6 +1004,15 @@ add-app-dir {
     cursor: pointer;
     color: #978693;
 }
+
+.AAinput {
+    height: 7%;
+    width: 20%;
+    padding: 0 .5%;
+    font-size: 1.3em;
+    color: #222;
+}
+
 
 
 
