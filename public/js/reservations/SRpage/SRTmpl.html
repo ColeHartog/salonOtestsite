@@ -19,6 +19,7 @@
                 <div id="leftAngle" class="APPBCdaynamearrows fa fa-angle-left"></div>
                 {{selectedDay}}
                 <div id="rightAngle" class="APPBCdaynamearrows fa fa-angle-right"></div>
+                <div id="gototoday">View Today's Appointment</div>
             </div>
             <div id="APPBCCDiv">
                 <div class="calanderSlot" ng-repeat="stylist in team" id="{{stylist._id}}" ng-if="selectedStylist === null || selectedStylist === stylist._id"  ng-class="{selectedSlot: selectedStylist === stylist._id}">

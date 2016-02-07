@@ -978,6 +978,23 @@ header {
     color: rgba(2, 2, 2, 1);
 }
 
+#gototoday {
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    color: rgba(2,2,2,.5);
+    font-size: .5em;
+    background-color: #978693;
+    padding: .75%;
+    transition: color .25s ease;
+}
+
+#gototoday:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
 #addAppDiv {
     color: rgb(253, 253, 253);
     padding: 3%;

@@ -48,6 +48,7 @@ angular.module('salonOApp')
         $scope.$apply();
         $scope.getDaysAppointments(date);
     });
+    
     $('#rightAngle').unbind().click(function(){
         var date = $('#appointmentsCalanderDiv').datepicker('getDate');
         date = new Date(Number(date)+86400000);
@@ -56,6 +57,14 @@ angular.module('salonOApp')
         $scope.$apply();
         $scope.getDaysAppointments(date);
     });
+    
+    $('#gototoday').unbind().click(function(){
+        var date = new Date(Date.now());
+        $('#appointmentsCalanderDiv').datepicker('setDate', date);
+        $scope.selectedDay = date.toDateString();
+        $scope.$apply();
+        $scope.getDaysAppointments(date);
+    })
     
     $scope.getDaysAppointments = function(date){
         SRService.getDaysAppointments(date).then(function(response){
