@@ -873,14 +873,10 @@ header {
 
 #APPBCCDiv {
     flex: 12;
-/*    border: 1px solid red;*/
     width: 100%;
     height: inherit;
     white-space: nowrap;
-/*    display: flex;*/
-/*    flex-direction: row;*/
     overflow-x: auto;
-/*    flex-wrap: nowrap;*/
 }
 
 .calanderSlot {
@@ -903,7 +899,6 @@ header {
 .slotName {
     height: 3%;
     padding-top: 1%;
-/*    background-color: #F8B64A;*/
     background-color: #636263;
     color: rgb(253,253,253);
     border-bottom: 1px solid #222;
@@ -936,6 +931,7 @@ header {
     line-height: 1.5;
     color: rgb(253, 253, 253);
     font-size: 1.1em;
+    outline: 1px solid #222;
 }
 
 .times {
@@ -971,6 +967,7 @@ header {
     background-color: #978693;
     padding: .75%;
     transition: color .25s ease;
+    border-radius: 7px;
 }
 
 #addNewAppDiv:hover {
@@ -988,6 +985,7 @@ header {
     background-color: #978693;
     padding: .75%;
     transition: color .25s ease;
+    border-radius: 7px;
 }
 
 #gototoday:hover {
@@ -1002,8 +1000,8 @@ header {
     
     position: fixed;
     top: 35%;
-    left: 35%;
-    width: 45%;
+    left: 42.5%;
+    width: 30%;
     height: 50%;
     background-color: #222;
     border-radius: 7px;
@@ -1029,6 +1027,62 @@ header {
     font-size: 1.3em;
     color: #222;
 }
+
+#clientSelection {
+    width: 30%;
+    height: 8%;
+}
+
+#AADstylistDate {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    top: 30%;
+}
+
+#stylistSelection {
+    
+}
+
+#calanderSelect {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: .8em;
+}
+
+#serviceSelection {
+    width: 20%;
+}
+
+.appselects {
+    font-size: 1.5em;
+    padding: 0 0 0 .5%;
+    margin-top: 4%;
+}
+
+#numbers {
+    width: 20%;
+}
+
+#createAppButt {
+    margin-top: 30%;
+    padding: 1% 2%;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #978693;
+    border-radius: 7px;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+}
+
+#createAppButt:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
+
+
 
 
 

@@ -5,6 +5,7 @@ var dateFunc = require('./dateFunc');
 module.exports = {
     
     create: function(req, res){
+        console.log(req.body);
         var appointment = new appointmentModel(req.body);
         var clientid = req.body.client;
         appointment.save(function(err, result){

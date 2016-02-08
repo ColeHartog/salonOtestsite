@@ -5,7 +5,7 @@ var appointmentSchema = new mongoose.Schema({
     date: {type: Number, required: true},
     stylist: {type: mongoose.Schema.Types.ObjectId, ref:'Stylist', required: true},
     client: {type: mongoose.Schema.Types.ObjectId, ref:'Client', required: true},
-    service: {type: String, required: true},
+    service: {type: String},
     duration: {type: Number, required: true}
 
 });

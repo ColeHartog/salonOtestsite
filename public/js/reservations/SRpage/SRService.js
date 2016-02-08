@@ -12,7 +12,6 @@ angular.module('salonOApp')
     
     this.getDaysAppointments = function(date){
         var pdate = Date.parse(date);
-        console.log(pdate);
         return $http({
             method: 'GET',
             url: '/api/appointment/day/' + pdate
@@ -27,6 +26,21 @@ angular.module('salonOApp')
             url: '/api/client/pop'
         }).then(function(response){
             return response.data
+        })
+    };
+    
+    this.createAppointment = function(data){
+        return $http({
+            method: "POST",
+            url: '/api/appointment',
+            data: {
+                date: Number(data.finalDate),
+                stylist: data.stylist,
+                client: data.clientID,
+                duration: Number(data.duration)
+            }
+        }).then(function(response){
+            return response;
         })
     };
     

@@ -15,7 +15,6 @@ angular.module('salonOApp')
         defaultDate: 0,
         onSelect: function(selected){
             $scope.selectedDay = (new Date(selected)).toDateString();
-            console.log((new Date(selected)));
             $scope.$apply();
             $scope.getDaysAppointments((new Date(selected)));
         }
@@ -62,6 +61,7 @@ angular.module('salonOApp')
         var date = new Date(Date.now());
         $('#appointmentsCalanderDiv').datepicker('setDate', date);
         $scope.selectedDay = date.toDateString();
+        $scope.selectedStylist = null;
         $scope.$apply();
         $scope.getDaysAppointments(date);
     })
@@ -109,9 +109,42 @@ angular.module('salonOApp')
     
     $scope.getClients();
     
-    $scope.logSelection = function(){
-        console.log($scope.clientInput);
+    $scope.filterSearch = function(client){
+        var names = $scope.appointment.client.split(' ');
+        if(client.firstname === names[0] && client.lastname === names[1]){
+            return client
+        }else{
+            return null
+        }
     };
+    
+    $('#calanderSelect').datepicker({
+        defaultDate: 0,
+        onSelect: function(selected){
+            $scope.selectedDay = (new Date(selected)).toDateString();
+            $scope.$apply();
+            $scope.getDaysAppointments((new Date(selected)));
+        }
+    });
+    
+    $scope.createAppointment = function(data){
+        $scope.toSend = data;
+        $scope.toSend.clientID = $scope.clients.filter($scope.filterSearch)[0]._id;
+        $scope.toSend.halfDate = new Date($('#calanderSelect').datepicker('getDate'));
+        $scope.toSend.date = $scope.toSend.halfDate.toString();
+        $scope.toSend.date = $scope.toSend.date.split(' ');
+        $scope.toSend.date.splice(4,1, $scope.toSend.time.toString().split(' ')[4]);
+        $scope.toSend.finalDate = Date.parse(new Date($scope.toSend.date.join(' '))); 
+        
+        SRService.createAppointment($scope.toSend).then(function(response){
+            $scope.addAppValue = false;
+            var date = new Date(Date.now());
+            $('#appointmentsCalanderDiv').datepicker('setDate', date);
+            $scope.selectedDay = date.toDateString();
+            $scope.getDaysAppointments(date);
+        });
+    };
+    
     
     
 })

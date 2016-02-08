@@ -1,22 +1,30 @@
-<div id="addAppDiv" ng-if="addAppValue">
+<div id="addAppDiv" ng-show="addAppValue">
     <div id="addAppX" class="fa fa-times" ng-click="changeAddApp()"></div>
     
-    <input id="clientSearch" class="AAinput" placeholder="Client Name" list="clients" ng-model="clientInput">
-    <datalist id="clients">
-        <option ng-repeat="client in clients" value="{{client._id}}" label="{{client.firstname}} {{client.lastname}}">
-<!--        {{client.firstname}} {{client.lastname}}-->
+    <input id="clientSelection" list="clientList" ng-model="appointment.client"/>
+    <datalist id="clientList">
+        <option ng-repeat="client in clients track by client._id">
+            {{client.firstname}} {{client.lastname}}
         </option>
     </datalist>
-    <br>
-    <input class="AAinput" placeholder="firstname" ng-model="clientInput.firstname">
-    {{clientInput}}
-    <button ng-click="logSelection()">log</button>
     
-    <br>
-    <select name="Stylist">
-        <option ng-repeat="stylist in team" value="{{stylist._id}}">
-            {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}
-        </option>
-    </select>
+    <div id="newClientDiv">
+        asdf
+    </div>
+    
+    <div id="AADstylistDate">
+        
+        <select class="appselects" id="stylistSelection"  ng-model="appointment.stylist" placeholder="Stylist">
+            <option value="" disabled selected>Stylist</option>
+            <option ng-repeat="stylist in team" value="{{stylist._id}}">{{stylist.firstname}} {{stylist.lastname.substr(0,1)}}</option>
+        </select>
+        
+        <div id="calanderSelect"></div>
+        <br><input placeholder="10:30:AM" class="appselects" type="time" ng-model="appointment.time"/><br><input placeholder="1.5" id="numbers" class="appselects" type="number" min="0" ng-model="appointment.duration"/>    
+    </div>
+    
+    <div id="createAppButt" ng-click="createAppointment(appointment)">
+        Create Appointment
+    </div>
     
 </div>
