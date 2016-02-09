@@ -1000,7 +1000,7 @@ header {
     
     position: fixed;
     top: 35%;
-    left: 42.5%;
+    left: 42.35%;
     width: 30%;
     height: 50%;
     background-color: #222;
@@ -1029,6 +1029,8 @@ header {
 }
 
 #clientSelection {
+    font-size: 1.5em;
+    padding-left: 1%;
     width: 30%;
     height: 8%;
 }
@@ -1063,6 +1065,40 @@ header {
 
 #numbers {
     width: 20%;
+}
+
+#newClientDiv {
+    position: absolute;
+    right: 10%;
+    top: 11.25%;
+    width: 50%;
+    height: 25%;
+    text-align: right;
+}
+
+.newCI {
+    font-size: 1.25em;
+    margin-left: 10%;
+    margin-bottom: 4%;
+    width: 40%;
+}
+
+#newCSubmit {
+    background-color: #978693;
+    width: 40%;
+    padding: 4%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    border-radius: 7px;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+}
+
+#newCSubmit:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
 }
 
 #createAppButt {
@@ -1170,7 +1206,7 @@ highlight {
     background-image: url(images/desk.jpg);
     background-size: cover;
     background-position: center;
-    padding: 5%;
+    padding: 5% 10%;
 }
 
 #mainAdminBody {
