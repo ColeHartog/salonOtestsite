@@ -42,6 +42,34 @@ angular.module('salonOApp', ['ui.router', 'ngAnimate'])
         templateUrl: './js/reservations/SRpage/SRTmpl.html',
         controller: 'SRCtrl'
     })
+    .state('adminLogin', {
+        url: '/adminLogin',
+        templateUrl: './js/adminPage/ALTmpl.html',
+        controller: 'adminCtrl'
+    })
+    .state('adminControl', {
+        url: '/adminControl',
+        templateUrl: './js/adminpage/adminTmpl.html',
+        controller: 'adminCtrl'
+    })
+    .state('adminSales', {
+        parent: 'adminControl',
+        url: '/Sales',
+        templateUrl: './js/adminPage/views/APSalesTmpl.html',
+        controller: 'adminCtrl'
+    })
+    .state('adminReports', {
+        parent: 'adminControl',
+        url: '/Reports',
+        templateUrl: './js/adminPage/views/APReportsTmpl.html',
+        controller: 'adminCtrl'
+    })
+    .state('adminStylist', {
+        parent: 'adminControl',
+        url: '/Stylists',
+        templateUrl: './js/adminPage/views/APSTylistsTmpl.html',
+        controller: 'adminCtrl'
+    })
     
     $urlRouterProvider.otherwise('/');
     

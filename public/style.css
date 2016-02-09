@@ -1120,9 +1120,99 @@ highlight {
     color: #978693;
 }
 
+#ALBody {
+    background-image: url(images/desk.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
 
+#adminloginDiv {
+    width: 40%;
+    height: 25%;
+    background-color: rgba(253, 253, 253, .7);
+    position: relative;
+    top: 40%;
+    left: 30%;
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(2, 2, 2, .5);
+    padding: 1%;
+    text-align: center;
+}
 
+.ALInputs {
+    font-size: 2em;
+    margin-top: 2%;
+    padding-left: 1%;
+}
 
+#ALButt {
+    margin-top: 5%;
+    background-color: #978693;
+    padding: 1%;
+    width: 20%;
+    margin-left: 40%;
+    font-size: 2em;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+}
+
+#ALButt:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
+#adminBody {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/desk.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 5%;
+}
+
+#mainAdminBody {
+    background-color: #EFDFAE;
+    height: 95%;
+    width: 100%;
+    border-radius: 0 7px 7px 7px;
+    box-shadow: 10px 10px 10px rgba(2, 2, 2, .5);
+    padding: 2%;
+}
+
+#adminNav {
+    width: 100%;
+    height: 5%;
+}
+
+.Atabs {
+    width: 10%;
+    display: inline-block;
+    background-color: #d1c296;
+    height: 100%;
+    font-size: 1.7em;
+    margin-right: .1%;
+    border-radius: 7px 7px 0 0;
+    padding: .25%;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+
+#notransview {
+    transition: none;
+}
+
+.selectedTab {
+    border: 0;
+    background-color: #EFDFAE;
+}
+
+#mainAdminBody > img {
+    width: 100%;
+    height: 100%;
+}
 
 
 

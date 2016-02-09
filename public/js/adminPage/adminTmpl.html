@@ -1,0 +1,13 @@
+<div id="adminBody">
+    
+    <div id="adminNav">
+        <div class="Atabs" ng-class="{selectedTab: paramFinder() === '/Sales'}" ui-sref="adminSales">Sales</div>
+        <div class="Atabs" ng-class="{selectedTab: paramFinder() === '/Reports'}" ui-sref="adminReports">Reports</div>
+        <div class="Atabs" ng-class="{selectedTab: paramFinder() === '/Stylists'}" ui-sref="adminStylist">Stylists</div>
+    </div>
+    <div id="mainAdminBody">
+        <div id="notransview" ui-view></div>
+        <img ng-if="paramFinder() === '/adminControl'" src="../../images/confidential.png">
+    </div>
+    
+</div>
