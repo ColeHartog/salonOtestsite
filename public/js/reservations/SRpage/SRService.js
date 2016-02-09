@@ -44,4 +44,19 @@ angular.module('salonOApp')
         })
     };
     
+    this.addNewClient = function(data){
+        return $http({
+            method: "POST",
+            url: '/api/client',
+            data: {
+                firstname: data.firstname,
+                lastname: data.lastname,
+                email: data.email,
+                phone: data.phone
+            }
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
 })

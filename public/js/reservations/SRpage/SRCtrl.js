@@ -145,5 +145,11 @@ angular.module('salonOApp')
         });
     };
     
+    $scope.addNewClient = function(data){
+        SRService.addNewClient(data).then(function(response){
+            $scope.newC = {};
+            $scope.getClients();
+        })
+    }
     
 })

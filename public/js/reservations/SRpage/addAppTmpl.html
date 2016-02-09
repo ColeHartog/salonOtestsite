@@ -9,8 +9,8 @@
     </datalist>
     
     <div id="newClientDiv">
-        <input class="newCI" placeholder="firstname"/><input placeholder="lastname" class="newCI"/><br><input placeholder="phone" type="tel" class="newCI"/><input placeholder="email" type="email" class="newCI"/>
-        <div id="newCSubmit">Add New Client</div>
+        <input class="newCI" placeholder="firstname" ng-model="newC.firstname" /><input placeholder="lastname" class="newCI" ng-model="newC.lastname"/><br><input placeholder="phone" type="tel" class="newCI" ng-model="newC.phone"/><input placeholder="email" type="email" class="newCI" ng-model="newC.email"/>
+        <div id="newCSubmit" ng-click="addNewClient(newC)">Add New Client</div>
     </div>
     
     <div id="AADstylistDate">

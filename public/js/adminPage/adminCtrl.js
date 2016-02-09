@@ -5,7 +5,6 @@ angular.module('salonOApp')
     
     $scope.signIn = function(data){
         adminService.login(data).then(function(response){
-            console.log(response);
             if(response.login === true){
                 $state.go('adminControl');
             }
