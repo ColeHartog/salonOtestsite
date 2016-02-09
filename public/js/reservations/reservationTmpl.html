@@ -9,7 +9,7 @@
             <div class="ReservationName">
                 Client
             </div>
-            <div id="RCButt">Request A Booking</div>
+            <div id="RCButt" ng-click="CTS()">Request A Booking</div>
         </div>
         <div id="ReservationStylistSide" class="ReservationSides">
             <div class="ReservationName">
@@ -20,5 +20,8 @@
             <div id="RSLoginButt" ng-click="login(stylistInput)">Log In</div>
         </div>
     </div>
-    
+    <div id="callToday" ng-show="callTodayValue">
+        Call: <highlight>801-746-1010</highlight>,<br>And Reserve Your Appointment
+        <div id="CTX" class="fa fa-times" ng-click="CTS()"></div>
+    </div>
 </div>

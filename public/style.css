@@ -1081,6 +1081,44 @@ header {
     color: rgba(2, 2, 2, 1);
 }
 
+#callToday {
+    width: 40%;
+    height: 30%;
+    text-align: center;
+    font-size: 3.5em;
+    line-height: 2em;
+    padding-top: 2%;
+    position: absolute;
+    top: 31.5%;
+    left: 30%;
+    background-image: url(images/dark_embroidery.png);
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+#callToday.ng-hide {
+    opacity: 0;
+    top: 10%;
+}
+
+highlight {
+    color: #978693;
+}
+
+#CTX {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: .5em;
+    transition: color .25s ease;
+}
+
+#CTX:hover {
+    cursor: pointer;
+    color: #978693;
+}
 
 
 

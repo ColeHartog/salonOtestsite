@@ -114,4 +114,10 @@ angular.module('salonOApp')
         })
     };
     
+    $scope.callTodayValue = false;
+    
+    $scope.CTS = function(){
+        $scope.callTodayValue = !$scope.callTodayValue;
+    }
+    
 })
