@@ -1,3 +1,53 @@
-<div>
-    Sales
+<div id="salesBody">
+    <div id="saleDiv">
+        <input id="saleClientInput" ng-model="sale.client" placeholder="Client Search" list="clientlistSale" />
+        <datalist id="clientlistSale">
+            <option ng-repeat="client in clients track by client._id">
+                {{client.firstname}} {{client.lastname}}
+            </option>
+        </datalist>
+        <br>
+        <div id="saleNewClientDiv">
+            <input class="saleNC" placeholder="firstname" ng-model="newC.firstname" /><br><input placeholder="lastname" class="saleNC" ng-model="newC.lastname"/><br><input placeholder="phone" type="tel" class="saleNC" ng-model="newC.phone"/><br><input placeholder="email" type="email" class="saleNC" ng-model="newC.email"/>
+            <div id="saleANC" ng-click="addNewClient(newC)">Add New Client</div>
+        </div>
+        <br>
+        <select id="saleStylistSelect" ng-model="sale.stylist">
+            <option value="" disabled selected>Select Stylist</option>
+            <option ng-repeat="stylist in team" value="stylist._id">
+                {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}
+            </option>
+        </select>
+        <br>
+        <select id="salePaymentSelect">
+            <option value="" disabled selected>Payment Method</option>
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+            <option>Cash</option>
+            <option>Check</option>
+        </select>
+        <br>
+        
+        <div id="productSideDiv">
+            <div id="PSsearchDiv">
+                <input id="productSearch" list="productList" ng-model="sale.prodectSelect" placeholder="Product Search" />
+                <datalist id="productList">
+                    <option ng-repeat="product in products">{{product.name}}, {{product.brand}}</option>
+                </datalist>
+                <div id="addProductToList">
+                    Add Product
+                </div>
+            </div>
+            <div id="productsAreaDiv">
+                {{products}}
+            </div>
+            <div id="totalDiv">
+                total
+            </div> 
+        </div>
+        
+    </div>
+    <div id="recentSalesDiv">
+        
+    </div>
 </div>
