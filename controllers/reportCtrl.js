@@ -36,7 +36,7 @@ module.exports = {
     salesDayReport: function(req, res){
         var startDate = dateFunc.getDayStart(req.params.id);
         var endDate = dateFunc.getEndDay(req.params.id);
-        saleModel.find({$and: [{date: {$gt: startDate}}, {date: {$lt: endDate}}]}, function(err, result){
+        saleModel.find({$and: [{date: {$gt: startDate}}, {date: {$lt: endDate}}]}).populate([{path: 'client', select: 'firstname lastname'}, {path: 'stylist', select: 'firstname lastname'}, {path: 'products.product', select: 'name brand'}]).exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })

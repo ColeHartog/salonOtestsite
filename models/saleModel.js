@@ -7,7 +7,8 @@ var saleSchema = new mongoose.Schema({
     stylist: {type: mongoose.Schema.Types.ObjectId, ref: 'Stylist', required: true},
     products: [{product: {type: mongoose.Schema.Types.ObjectId, ref: 'Product'}, amount: {type: Number, min: 0}}],
     total: {type: Number, required: true},
-    soldby: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true}
+//    soldby: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
+    paymentMethod: {type: String}
     
 });
 

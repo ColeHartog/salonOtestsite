@@ -56,4 +56,29 @@ angular.module('salonOApp')
         })
     };
     
+    this.makeSale = function(data){
+        return $http({
+            method: 'POST',
+            url: '/api/sale',
+            data: {
+                client: data.clientID,
+                stylist: data.stylistID,
+                products: data.products,
+                total: data.total,
+                paymentMethod: data.paymentMethod
+            }
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
+    this.getDaySales = function(){
+        return $http({
+            method: 'GET',
+            url: '/api/report/salesDay/'+Date.now(),
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
 })

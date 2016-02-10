@@ -14,40 +14,57 @@
         <br>
         <select id="saleStylistSelect" ng-model="sale.stylist">
             <option value="" disabled selected>Select Stylist</option>
-            <option ng-repeat="stylist in team" value="stylist._id">
+            <option ng-repeat="stylist in team" value="{{stylist._id}}">
                 {{stylist.firstname}} {{stylist.lastname.substr(0,1)}}
             </option>
         </select>
         <br>
-        <select id="salePaymentSelect">
+        <select id="salePaymentSelect" ng-model="sale.paymentMethod">
             <option value="" disabled selected>Payment Method</option>
             <option>Credit Card</option>
             <option>Debit Card</option>
             <option>Cash</option>
             <option>Check</option>
+            <option>Gift Card</option>
         </select>
         <br>
         
+        <div id="finalizeSaleButt" ng-click="makeSale(sale)">
+            Finalize Sale
+        </div>
+        
         <div id="productSideDiv">
             <div id="PSsearchDiv">
-                <input id="productSearch" list="productList" ng-model="sale.prodectSelect" placeholder="Product Search" />
-                <datalist id="productList">
+                <input id="productSearch" list="productList" ng-model="sale.productSelect" placeholder="Product Search" /><datalist id="productList">
                     <option ng-repeat="product in products">{{product.name}}, {{product.brand}}</option>
-                </datalist>
-                <div id="addProductToList">
+                </datalist><div id="addProductToList" ng-click="addProductToSelected()">
                     Add Product
                 </div>
             </div>
             <div id="productsAreaDiv">
-                {{products}}
+                <div class="productInCart" ng-repeat="product in selectedProducts" ng-class="{evenProduct: $index%2 === 1}">
+                    <div class="nameAndBrand">{{product.product.name}}, {{product.product.brand}}
+                    </div>
+                    <div class="trashbinProduct fa fa-trash" ng-click="removeFromCart($index)"></div>
+                    <div class="amountforproduct">
+                        <input class="amountProductNumberInput" type="number" min="0" ng-model="product.amount">
+                    </div>
+                    <div class="priceforproduct">
+                        ${{product.product.price*product.amount}}
+                    </div>
+                    
+                </div>
             </div>
             <div id="totalDiv">
-                total
+                Total: ${{totalInCart()}}
             </div> 
         </div>
         
     </div>
     <div id="recentSalesDiv">
-        
+        <div class="salesClass" ng-repeat="sale in todaysSales">
+            {{sale.client.firstname}} {{sale.client.lastname}},<br>
+            {{sale.stylist.firstname}} {{sale.stylist.lastname}}<br>
+        </div>
     </div>
 </div>
