@@ -1,3 +1,20 @@
-<div>
-    Products
+<div id="AdminproductBody">
+    <div id="APCurrentProductsDiv">
+        <div id="APCPSearchDiv">
+            <input id="APCPInputSearch" placeholder="Search Products..." ng-model="ProductSearch" />
+        </div>
+        <div id="APCPExistingDiv">
+            <div id="APCPExistingDivActual">
+                <div class="APCPProductDivClass" ng-repeat="product in products">
+                    {{product.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="APAddUpdateProductsDiv">
+        new/update
+    </div>
+    <div id="APtodaysSoldProductsDiv">
+        sold
+    </div>
 </div>
