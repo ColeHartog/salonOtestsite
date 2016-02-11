@@ -103,6 +103,10 @@ angular.module('salonOApp')
     
     $scope.removeFromCart = function(index){
         $scope.selectedProducts.splice(index, 1);
-    }
+    };
+    
+    $scope.makeTimeReadable = function(dateNum){
+        return new Date(dateNum).toLocaleTimeString();
+    };
     
 })

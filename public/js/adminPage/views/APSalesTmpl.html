@@ -52,19 +52,20 @@
                     <div class="priceforproduct">
                         ${{product.product.price*product.amount}}
                     </div>
-                    
                 </div>
             </div>
             <div id="totalDiv">
                 Total: ${{totalInCart()}}
             </div> 
         </div>
-        
     </div>
-    <div id="recentSalesDiv">
-        <div class="salesClass" ng-repeat="sale in todaysSales">
-            {{sale.client.firstname}} {{sale.client.lastname}},<br>
-            {{sale.stylist.firstname}} {{sale.stylist.lastname}}<br>
+    <div id="recentSalesDivScrollBarBullshit">
+        <div id="recentSalesDiv">
+            <div class="salesClass" ng-class="{evenSalesClass: $index%2 === 1}" ng-repeat="sale in todaysSales">
+                <div class="salesClassParts">{{sale.client.firstname}} {{sale.client.lastname}}</div>
+                <div class="salesClassParts">{{sale.stylist.firstname}} {{sale.stylist.lastname}}</div>
+                <div class="salesClassParts">{{makeTimeReadable(sale.date)}}</div>
+            </div>
         </div>
     </div>
 </div>

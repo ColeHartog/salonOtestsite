@@ -64,10 +64,10 @@ angular.module('salonOApp', ['ui.router', 'ngAnimate'])
         templateUrl: './js/adminPage/views/APReportsTmpl.html',
         controller: 'adminCtrl'
     })
-    .state('adminStylist', {
+    .state('adminProducts', {
         parent: 'adminControl',
-        url: '/Stylists',
-        templateUrl: './js/adminPage/views/APSTylistsTmpl.html',
+        url: '/Products',
+        templateUrl: './js/adminPage/views/APProductsTmpl.html',
         controller: 'adminCtrl'
     })
     
