@@ -3,7 +3,7 @@
     
     <input id="clientSelection" list="clientList" ng-model="appointment.client" placeholder="Client Search" />
     <datalist id="clientList">
-        <option ng-repeat="client in clients track by client._id">
+        <option ng-repeat="client in clients track by $index">
             {{client.firstname}} {{client.lastname}}
         </option>
     </datalist>
