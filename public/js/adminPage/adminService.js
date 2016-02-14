@@ -81,4 +81,58 @@ angular.module('salonOApp')
         })
     };
     
+    this.makeNewProduct = function(data){
+        return $http({
+            method: "POST",
+            url: '/api/product',
+            data: {
+                brand: data.brand,
+                name: data.name,
+                price: data.price,
+                instock: data.instock,
+                totalsold: data.totalsold
+            }
+        }).then(function(response){
+            return response;
+        })
+    };
+    
+    this.updateProduct = function(data){
+        return $http({
+            method: "PUT",
+            url: '/api/product/'+data._id,
+            data: {
+                brand: data.brand,
+                name: data.name,
+                price: data.price,
+                instock: data.instock,
+                totalsold: data.totalsold
+            }
+        }).then(function(response){
+            return response;
+        })
+    };
+    
+    this.newOrder = function(data, id){
+        return $http({
+            method: 'PUT',
+            url: '/api/product/newOrder/' +id,
+            data: {
+                amount: data.amount,
+                date: data.date
+            }
+        }).then(function(respose){
+            return respose.data;
+        })
+    };
+    
+    this.getNewClients = function(){
+        return $http({
+            method: "GET",
+            url: '/api/report/newClients'
+        }).then(function(response){
+            return response.data
+        })
+    };
+    
 })

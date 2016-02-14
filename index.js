@@ -109,6 +109,7 @@ app.get('/api/product', productCtrl.read);
 app.get('/api/product/:id', productCtrl.readid);
 app.put('/api/product/:id', productCtrl.update);
 app.delete('/api/product/:id', productCtrl.destroy);
+app.put('/api/product/newOrder/:id', productCtrl.newOrder);
 
 
 //sale api

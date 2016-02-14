@@ -5,16 +5,48 @@
         </div>
         <div id="APCPExistingDiv">
             <div id="APCPExistingDivActual">
-                <div class="APCPProductDivClass" ng-repeat="product in products">
-                    {{product.name}}
+                <div class="APCPProductDivClass" ng-class="{APCPProductClassEven: $index%2 === 1}" ng-repeat="product in products" ng-click="selectPProduct(product)">
+                    <div class="APCPProductInfoClass2">
+                        {{product.name}}
+                    </div>
+                    <div class="APCPProductInfoClass1">
+                        {{product.brand}}
+                    </div>
+                    <div class="APCPProductInfoClass1">
+                        {{product.instock}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="APAddUpdateProductsDiv">
-        new/update
+        <div id="APAUAUDiv">
+            <input class="APAUInputClass" placeholder="Name" ng-model="selectedPProduct.name"><select class="APAUInputClass" ng-model="selectedPProduct.brand">
+                <option selected disabled>Brand</option>
+                <option>Phyto</option>
+                <option>Kevin Murphy</option>
+                <option>Oribe</option>
+                <option>Davines</option>
+                <option>Other</option>
+            </select><br><br>
+            <input class="APAUInputClass" type="number" placeholder="In Stock" ng-model="selectedPProduct.instock"><input class="APAUInputClass" type="number" placeholder="Price" ng-model="selectedPProduct.price"><br><br>
+            <input class="APAUInputClass" type="number" placeholder="Total Sold" ng-model="selectedPProduct.totalsold"><br>
+            <div id="APAUClearInputsButt" ng-click="clearSelectedPProduct()">Clear Inputs</div>
+            <div id="APAUCreateUpdateButt" ng-click="addorupdateProduct(selectedPProduct)">Create / Update</div>
+        </div>
+        <div id="APAUNewShipDiv">
+            <input class="APAUNSInputClass" type="date" ng-model="order.date" /><input class="APAUNSInputClass" placeholder="Amount Recieved" type="number" ng-model="order.amount"><br>
+            <div class="APAUNSButts" ng-click="clearOrder()">Clear Inputs</div>
+            <div class="APAUNSButts" ng-click="newOrder(order, selectedPProduct._id)">Create Order</div>
+        </div>
     </div>
     <div id="APtodaysSoldProductsDiv">
-        sold
+        <div id="recentSalesDiv">
+            <div class="salesClass" ng-class="{evenSalesClass: $index%2 === 1}" ng-repeat="sale in todaysSales | orderBy: '$index':true">
+                <div class="salesClassParts">{{sale.client.firstname}} {{sale.client.lastname}}</div>
+                <div class="salesClassParts">{{sale.stylist.firstname}} {{sale.stylist.lastname}}</div>
+                <div class="salesClassParts">{{makeTimeReadable(sale.date)}}</div>
+            </div>
+        </div>
     </div>
 </div>

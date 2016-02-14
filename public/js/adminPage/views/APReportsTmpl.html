@@ -1,3 +1,25 @@
-<div>
-    Reports
+<div id="APRmainDiv">
+    <div id="APRBodyDiv">
+        <div id="ClientReportSideDiv">
+            <div id="CRSReportSide">
+                <div id="CRSRSCalander"></div>
+                <div id="CRSRSChartDiv">chart</div>
+            </div>
+            <div id="CRSListSide">
+                <div id="CRSListDiv">
+                    <div class="CRSLSClientDiv" ng-repeat="client in newClients" ng-class="{CRSLSClientDivEven: $index%2 === 1}">
+                        {{client.firstname}} {{client.lastname}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="SalesReportsSideDiv">
+            <div id="SRSSelectionSide">
+                Selection
+            </div>
+            <div id="SRSListSide">
+                List
+            </div>
+        </div>
+    </div>
 </div>

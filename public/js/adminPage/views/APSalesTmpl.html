@@ -43,7 +43,7 @@
             </div>
             <div id="productsAreaDiv">
                 <div class="productInCart" ng-repeat="product in selectedProducts" ng-class="{evenProduct: $index%2 === 1}">
-                    <div class="nameAndBrand">{{product.product.name}}, {{product.product.brand}}
+                    <div class="nameAndBrand">{{product.product.name}}
                     </div>
                     <div class="trashbinProduct fa fa-trash" ng-click="removeFromCart($index)"></div>
                     <div class="amountforproduct">
@@ -61,7 +61,7 @@
     </div>
     <div id="recentSalesDivScrollBarBullshit">
         <div id="recentSalesDiv">
-            <div class="salesClass" ng-class="{evenSalesClass: $index%2 === 1}" ng-repeat="sale in todaysSales">
+            <div class="salesClass" ng-class="{evenSalesClass: $index%2 === 1}" ng-repeat="sale in todaysSales | orderBy: '$index':true">
                 <div class="salesClassParts">{{sale.client.firstname}} {{sale.client.lastname}}</div>
                 <div class="salesClassParts">{{sale.stylist.firstname}} {{sale.stylist.lastname}}</div>
                 <div class="salesClassParts">{{makeTimeReadable(sale.date)}}</div>

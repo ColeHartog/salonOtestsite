@@ -1530,23 +1530,229 @@ highlight {
 
 #APCPExistingDivActual {
     width: 100%;
-    height: 100%;
+    height: 90.25%;
     overflow-y: scroll;
     background-image: url(images/squared_metal.png);
+    font-size: 2em;
+}
+
+.APCPProductDivClass {
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.APCPProductClassEven {
+    background-color: rgba(2, 2, 2, .5);
+}
+
+.APCPProductInfoClass2 {
+    flex: 2;
+}
+
+.APCPProductInfoClass2:hover {
+    cursor: pointer;
+}
+
+.APCPProductInfoClass1 {
+    flex: 1;
+    text-align: right;
+}
+
+.APCPProductInfoClass1:hover {
+    cursor: pointer;
 }
 
 #APAddUpdateProductsDiv {
     flex: 2;
-    border: 1px solid green;
     height: 100%;
-    padding: 0 1% 0 1%;
+    width: 100%;
+    padding: 0 2% 0 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+#APAUAUDiv {
+    flex: 2;
+    text-align: center;
+}
+
+.APAUInputClass {
+    font-size: 2em;
+    padding-left: 1%;
+    margin-bottom: 3%;
+    width: 50%;
+}
+
+.APAUInputClass:nth-child(odd) {
+    border-radius: 7px 0 0 7px;
+}
+
+.APAUInputClass:nth-child(even) {
+    border-radius: 0 7px 7px 0;
+}
+
+.APAUInputClass:nth-child(9) {
+    border-radius: 7px;
+}
+
+#APAUClearInputsButt {
+    background-color: #978693;
+    padding: 2% 3%;
+    margin-top: 10%;
+    font-size: 2em;
+    display: inline-block;
+    border-radius: 7px;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+}
+
+#APAUClearInputsButt:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
+#APAUCreateUpdateButt {
+    background-color: #978693;
+    padding: 2% 3%;;
+    font-size: 2em;
+    margin-left: 20%;
+    display: inline-block;
+    border-radius: 7px;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+}
+
+#APAUCreateUpdateButt:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
+#APAUNewShipDiv {
+    flex: 1;
+    height: 100%;
+}
+
+.APAUNSInputClass {
+    font-size: 2em;
+    height: 10%;
+    padding-left: 1%;
+    width: 50%;
+}
+
+.APAUNSInputClass:nth-of-type(1) {
+    border-radius: 7px 0 0 7px;
+}
+
+.APAUNSInputClass:nth-of-type(2) {
+    border-radius: 0 7px 7px 0;
+}
+
+.APAUNSButts {
+    background-color: #978693;
+    display: inline-block;
+    padding: 2%;
+    font-size: 2em;
+    border-radius: 7px;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+    margin: 9% 11% 0 11%;
+}
+
+.APAUNSButts:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
 }
 
 #APtodaysSoldProductsDiv {
     flex: 1;
-    border: 1px solid blue;
     height: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    background-image: url(images/squared_metal.png);
+}
+
+#APRmainDiv {
+    padding: 2%;
+    width: 100%;
+    height: 100%;
+}
+
+#APRBodyDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#ClientReportSideDiv {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
     padding-right: 1%;
+}
+
+#CRSReportSide {
+    flex: 3;
+    height: 100%;
+    text-align: center;
+/*    border: 1px solid red;*/
+}
+
+#CRSRSCalander {
+    display: inline-block;
+}
+
+#CRSRSChartDiv {
+    border: 1px solid hotpink;
+}
+
+#CRSListSide {
+    flex: 2;
+    height: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+#CRSListDiv {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-image: url(images/squared_metal.png);
+}
+
+.CRSLSClientDiv {
+    padding: 2%;
+    font-size: 1.5em;
+    color: #222;
+    width: 100%;
+    background-color: rgba(2, 2, 2, .25);
+}
+
+.CRSLSClientDivEven {
+    background-color: rgba(253, 253, 253, .25);
+}
+
+#SalesReportsSideDiv {
+    flex: 1;
+    height: 100%;
+    padding-left: 1%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid blue;
+}
+
+#SRSSelectionSide {
+    flex: 1;
+    border: 1px solid green;
+}
+
+#SRSListSide {
+    flex: 1;
+    border: 1px solid red;
 }
 
 

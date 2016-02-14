@@ -109,4 +109,59 @@ angular.module('salonOApp')
         return new Date(dateNum).toLocaleTimeString();
     };
     
+    $scope.selectedPProduct = {brand: 'Brand'};
+    
+    $scope.selectPProduct = function(data){
+        $scope.selectedPProduct = data;
+        console.log($scope.selectedPProduct);
+    };
+    
+    $scope.clearSelectedPProduct = function(){
+        $scope.selectedPProduct = {};
+    };
+    
+    $scope.addorupdateProduct = function(data){
+        if(data._id){
+            adminService.updateProduct(data).then(function(response){
+                $scope.clearSelectedPProduct();
+                $scope.getProducts();
+            })
+        }else{
+            adminService.makeNewProduct(data).then(function(response){
+                $scope.clearSelectedPProduct();
+                $scope.getProducts();
+            })
+        }
+    };
+    
+    $scope.clearOrder = function(){
+        $scope.order = {};
+    };
+    
+    $scope.newOrder = function(data, id){
+        if(id){
+            adminService.newOrder(data, id).then(function(response){
+                $scope.clearSelectedPProduct();
+                $scope.clearOrder();
+                $scope.getProducts();
+            });
+        }
+    };
+    
+    $('#CRSRSCalander').datepicker({
+        defaultDate: 0,
+        onSelect: function(selected){
+            $scope.selectedDay = (new Date(selected)).toDateString();
+            $scope.$apply();
+        }
+    });
+    
+    $scope.getNewClients = function(){
+        adminService.getNewClients().then(function(response){
+            $scope.newClients = response;
+        })
+    };
+    
+    $scope.getNewClients();
+    
 })
