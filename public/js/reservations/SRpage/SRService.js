@@ -59,4 +59,13 @@ angular.module('salonOApp')
         })
     };
     
+    this.deleteAppointment = function(id){
+        return $http({
+            method: "DELETE",
+            url: '/api/appointment/'+id
+        }).then(function(response){
+            
+        })
+    };
+    
 })

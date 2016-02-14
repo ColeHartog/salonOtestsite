@@ -150,6 +150,13 @@ angular.module('salonOApp')
             $scope.newC = {};
             $scope.getClients();
         })
-    }
+    };
+    
+    $scope.deleteAppointment = function(id){
+        SRService.deleteAppointment(id).then(function(){
+            console.log(Date.parse(new Date($scope.selectedDay)));
+            $scope.getDaysAppointments(new Date($scope.selectedDay));
+        })
+    };
     
 })

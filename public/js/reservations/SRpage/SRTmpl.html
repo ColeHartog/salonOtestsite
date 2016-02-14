@@ -29,8 +29,7 @@
                     <div class="slotAppointments">
                         <div class="appointment" ng-repeat="appointment in daysAppointments | filter: stylist._id" ng-style="setProperties({{appointment.date}},{{appointment.duration}})">
                             {{appointment.client.firstname}} {{appointment.client.lastname}}
-                            <br>
-                            {{appointment.service}}
+                            <div class="fa fa-times appointmentX" ng-click="deleteAppointment(appointment._id)"></div>
                         </div>
                         <div class="times" ng-repeat="time in times track by $index">
                         {{time}}

@@ -1843,6 +1843,20 @@ highlight {
     margin-top: 2%;
 }
 
+.appointmentX {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: rgba(253, 253, 253, 1);
+    transition: color .25s ease;
+    z-index: 12;
+}
+
+.appointmentX:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
+}
+
 
 
 
