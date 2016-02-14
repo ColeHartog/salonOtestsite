@@ -36,7 +36,7 @@ module.exports = {
     salesDayReport: function(req, res){
         var startDate = dateFunc.getDayStart(req.params.id);
         var endDate = dateFunc.getEndDay(req.params.id);
-        saleModel.find({$and: [{date: {$gt: startDate}}, {date: {$lt: endDate}}]}).populate([{path: 'client', select: 'firstname lastname'}, {path: 'stylist', select: 'firstname lastname'}, {path: 'products.product', select: 'name brand'}]).exec(function(err, result){
+        saleModel.find({$and: [{date: {$gt: startDate}}, {date: {$lt: endDate}}]}).populate([{path: 'client', select: 'firstname lastname'}, {path: 'stylist', select: 'firstname lastname'}, {path: 'products.product', select: 'name brand price'}]).exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })
@@ -53,7 +53,7 @@ module.exports = {
     salesMonthReport: function(req, res){
         var startMonth = dateFunc.getStartofMonth(req.params.id);
         var endMonth = dateFunc.getEndofMonth(req.params.id);
-        saleModel.find({$and: [{date: {$gt: startMonth}}, {date: {$lt: endMonth}}]}, function(err, result){
+        saleModel.find({$and: [{date: {$gt: startMonth}}, {date: {$lt: endMonth}}]}).populate([{path: 'client', select: 'firstname lastname'}, {path: 'stylist', select: 'firstname lastname'}, {path: 'products.product', select: 'name brand price'}]).exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })
@@ -70,7 +70,7 @@ module.exports = {
     saleYearReport: function(req, res){
         var startYear = dateFunc.startofYear(req.params.id);
         var endYear = dateFunc.endofYear(req.params.id);
-        saleModel.find({$and: [{date: {$gt: startYear}}, {date: {$lt: endYear}}]}, function(err, result){
+        saleModel.find({$and: [{date: {$gt: startYear}}, {date: {$lt: endYear}}]}).populate([{path: 'client', select: 'firstname lastname'}, {path: 'stylist', select: 'firstname lastname'}, {path: 'products.product', select: 'name brand price'}]).exec(function(err, result){
             if(err){res.send(err)}
             else{res.send(result)}
         })

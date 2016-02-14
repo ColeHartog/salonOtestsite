@@ -1698,7 +1698,7 @@ highlight {
     flex: 3;
     height: 100%;
     text-align: center;
-/*    border: 1px solid red;*/
+    overflow: hidden;
 }
 
 #CRSRSCalander {
@@ -1714,6 +1714,7 @@ highlight {
     height: 100%;
     border-radius: 7px;
     overflow: hidden;
+    
 }
 
 #CRSListDiv {
@@ -1742,17 +1743,97 @@ highlight {
     padding-left: 1%;
     display: flex;
     flex-direction: row;
-    border: 1px solid blue;
+    overflow: hidden;
 }
 
 #SRSSelectionSide {
     flex: 1;
-    border: 1px solid green;
+    text-align: center;
+}
+
+#SRSSSCalander {
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.SRSSbutts {
+    font-size: 2em;
+    background-color: #978693;
+    border-radius: 7px;
+    width: 40%;
+    margin: 10% auto;
+    padding: 2% 4%;
+    color: rgba(2, 2, 2, .5);
+    transition: color .25s ease;
+}
+
+.SRSSbutts:hover {
+    cursor: pointer;
+    color: rgba(2, 2, 2, 1);
 }
 
 #SRSListSide {
     flex: 1;
-    border: 1px solid red;
+    height: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    margin-left: 4%;
+    background-image: url(images/squared_metal.png);
+}
+
+#SRSLSListDiv {
+     width: 100%;
+    height: 95%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#SRSLSTotalDiv {
+    width: 100%;
+    height: 5%;
+    font-size: 1.5em;
+    text-align: right;
+    padding: 0 6%;
+    background-color: rgba(253, 253, 253, 1);
+    border-top: 1px solid #222;
+}
+
+.SRSLSLClass {
+    width: 100%;
+    padding: 2%;
+    font-size: 1.25em;
+    position: relative;
+    padding-bottom: 12%;
+    background-color: rgba(2, 2, 2, .25);
+}
+
+.SRSLSLClassEven {
+    background-color: rgba(253, 253, 253, .25);
+}
+
+.salesClassParts2 {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.SRSLSLProductClass {
+    font-size: .75em;
+    width: 100%;
+    padding-left: 10%;
+}
+
+.SRSLSLPCPrice {
+    display: inline-block;
+    position: absolute;
+    right: 15%;
+}
+
+.SRSLSLSaleTotal {
+    position: absolute;
+    right: 14.5%;
+    margin-top: 2%;
 }
 
 

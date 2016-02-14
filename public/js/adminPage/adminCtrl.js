@@ -151,7 +151,15 @@ angular.module('salonOApp')
     $('#CRSRSCalander').datepicker({
         defaultDate: 0,
         onSelect: function(selected){
-            $scope.selectedDay = (new Date(selected)).toDateString();
+            $scope.selectedClientDay = Date.parse(new Date(selected));
+            $scope.$apply();
+        }
+    });
+    
+    $('#SRSSSCalander').datepicker({
+        defaultDate: 0,
+        onSelect: function(selected){
+            $scope.selectedReportDay = Date.parse(new Date(selected));
             $scope.$apply();
         }
     });
@@ -163,5 +171,41 @@ angular.module('salonOApp')
     };
     
     $scope.getNewClients();
+    
+    $scope.selectedReportDay = Date.now();
+    
+    $scope.getSalesDMY = function(dmy){
+        if(dmy === 'day'){
+            adminService.getSalesDay($scope.selectedReportDay).then(function(response){
+                $scope.salesArray = response;
+            });
+        }else if(dmy === 'month'){
+            adminService.getSalesMonth($scope.selectedReportDay).then(function(response){
+                $scope.salesArray = response;
+            })
+        }else if(dmy === 'year'){
+            adminService.getSalesYear($scope.selectedReportDay).then(function(response){
+                $scope.salesArray = response;
+            })
+        }
+    };
+    
+    $scope.getSalesDMY('day');
+    
+    $scope.totalSales = function(){
+        var total = 0;
+        for(var i = 0; i < $scope.salesArray.length; i++){
+            total += $scope.salesArray[i].total;
+        }
+        return total;
+    };
+    
+    $scope.totalOfProducts = function(data){
+        var total = 0;
+        for(var i = 0; i < data.length; i++){
+            total += data[i].product.price * data[i].amount;
+        }
+        return total;
+    };
     
 })

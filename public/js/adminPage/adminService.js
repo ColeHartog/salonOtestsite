@@ -135,4 +135,31 @@ angular.module('salonOApp')
         })
     };
     
+    this.getSalesDay = function(date){
+        return $http({
+            method: 'GET',
+            url: '/api/report/salesDay/' + date,
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
+    this.getSalesMonth = function(date){
+        return $http({
+            method: "GET",
+            url: '/api/report/salesMonth/'+date
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
+    this.getSalesYear = function(date){
+        return $http({
+            method: "GET",
+            url: '/api/report/salesYear/'+date
+        }).then(function(response){
+            return response.data
+        })
+    };
+    
 })
