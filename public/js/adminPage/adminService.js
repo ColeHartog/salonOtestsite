@@ -135,6 +135,15 @@ angular.module('salonOApp')
         })
     };
     
+    this.getRebookedClients = function(){
+        return $http({
+            method: "GET",
+            url: '/api/report/newClientsRebooked'
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
     this.getSalesDay = function(date){
         return $http({
             method: 'GET',

@@ -4,8 +4,7 @@
             <div id="CRSReportSide">
                 <div id="CRSRSCalander"></div>
                 <div id="CRSRSChartDiv">
-                    chart<br>
-                    {{selectedClientDay}}
+                    <pie-chart-dir ng-if="(newClients && rebookedClients)" id="piechartRebook" new-clients="newClients" rebooked-clients="rebookedClients"></pie-chart-dir>
                 </div>
             </div>
             <div id="CRSListSide">

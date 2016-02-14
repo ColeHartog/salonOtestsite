@@ -172,6 +172,15 @@ angular.module('salonOApp')
     
     $scope.getNewClients();
     
+    $scope.getRebookedClients = function(){
+        adminService.getRebookedClients().then(function(response){
+            $scope.rebookedClients = response;
+        })
+    };
+    
+    $scope.getRebookedClients();
+    
+    
     $scope.selectedReportDay = Date.now();
     
     $scope.getSalesDMY = function(dmy){

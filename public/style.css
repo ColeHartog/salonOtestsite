@@ -1706,7 +1706,14 @@ highlight {
 }
 
 #CRSRSChartDiv {
-    border: 1px solid hotpink;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+#piechartRebook {
+    width: 100%;
+    height: 100%;
 }
 
 #CRSListSide {
@@ -1835,6 +1842,7 @@ highlight {
     right: 14.5%;
     margin-top: 2%;
 }
+
 
 
 
