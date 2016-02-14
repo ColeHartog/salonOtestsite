@@ -75,69 +75,69 @@ app.delete('/api/user/:id', userCtrl.destroy);
 
 
 //client api
-app.post('/api/client', clientCtrl.create);
-app.get('/api/client', clientCtrl.read);
-app.get('/api/client/pop', clientCtrl.readpop);
-app.get('/api/client/:id', clientCtrl.readid);
-app.get('/api/client/pop/:id', clientCtrl.readidpop);
-app.put('/api/client/:id', clientCtrl.update);
-app.delete('/api/client/:id', clientCtrl.destroy);
+app.post('/api/client', userCtrl.isAuth,  clientCtrl.create);
+app.get('/api/client', userCtrl.isAuth,  clientCtrl.read);
+app.get('/api/client/pop', userCtrl.isAuth,  clientCtrl.readpop);
+app.get('/api/client/:id', userCtrl.isAuth,  clientCtrl.readid);
+app.get('/api/client/pop/:id', userCtrl.isAuth,  clientCtrl.readidpop);
+app.put('/api/client/:id', userCtrl.isAuth,  clientCtrl.update);
+app.delete('/api/client/:id', userCtrl.isAuth,  clientCtrl.destroy);
 
 
 // stylist api
-app.post('/api/stylist', stylistCtrl.create);
+app.post('/api/stylist', userCtrl.isAuth,  stylistCtrl.create);
 app.get('/api/stylist', stylistCtrl.read);
 app.get('/api/stylist/:id', stylistCtrl.readid);
-app.put('/api/stylist/:id', stylistCtrl.update);
-app.delete('/api/stylist/:id', stylistCtrl.destroy);
+app.put('/api/stylist/:id', userCtrl.isAuth,  stylistCtrl.update);
+app.delete('/api/stylist/:id', userCtrl.isAuth,  stylistCtrl.destroy);
 
 
 //appointment api
-app.post('/api/appointment', appointmentCtrl.create);
-app.get('/api/appointment', appointmentCtrl.read);
-app.get('/api/appointment/pop', appointmentCtrl.readpop);
-app.get('/api/appointment/:id', appointmentCtrl.readid);
-app.get('/api/appointment/pop/:id', appointmentCtrl.readidpop);
-app.get('/api/appointment/day/:id',  appointmentCtrl.todaysAppointments);
-app.put('/api/appointment/:id', appointmentCtrl.update);
-app.delete('/api/appointment/:id', appointmentCtrl.destroy);
+app.post('/api/appointment', userCtrl.isAuth,  appointmentCtrl.create);
+app.get('/api/appointment', userCtrl.isAuth,  appointmentCtrl.read);
+app.get('/api/appointment/pop', userCtrl.isAuth,  appointmentCtrl.readpop);
+app.get('/api/appointment/:id', userCtrl.isAuth,  appointmentCtrl.readid);
+app.get('/api/appointment/pop/:id', userCtrl.isAuth,  appointmentCtrl.readidpop);
+app.get('/api/appointment/day/:id', userCtrl.isAuth,  appointmentCtrl.todaysAppointments);
+app.put('/api/appointment/:id', userCtrl.isAuth,  appointmentCtrl.update);
+app.delete('/api/appointment/:id', userCtrl.isAuth,  appointmentCtrl.destroy);
 
 
 //product api
-app.post('/api/product', productCtrl.create);
-app.get('/api/product', productCtrl.read);
-app.get('/api/product/:id', productCtrl.readid);
-app.put('/api/product/:id', productCtrl.update);
-app.delete('/api/product/:id', productCtrl.destroy);
-app.put('/api/product/newOrder/:id', productCtrl.newOrder);
+app.post('/api/product', userCtrl.isAuth,  productCtrl.create);
+app.get('/api/product', userCtrl.isAuth,  productCtrl.read);
+app.get('/api/product/:id', userCtrl.isAuth,  productCtrl.readid);
+app.put('/api/product/:id', userCtrl.isAuth,  productCtrl.update);
+app.delete('/api/product/:id', userCtrl.isAuth,  productCtrl.destroy);
+app.put('/api/product/newOrder/:id', userCtrl.isAuth,  productCtrl.newOrder);
 
 
 //sale api
-app.post('/api/sale', saleCtrl.create);
-app.get('/api/sale', saleCtrl.read);
-app.get('/api/sale/pop', saleCtrl.readpop);
-app.get('/api/sale/:id', saleCtrl.readid);
-app.get('/api/sale/pop/:id', saleCtrl.readidpop);
-app.put('/api/sale/:id', saleCtrl.update);
-app.delete('/api/sale/:id', saleCtrl.destroy);
+app.post('/api/sale', userCtrl.isAuth,  saleCtrl.create);
+app.get('/api/sale', userCtrl.isAuth,  saleCtrl.read);
+app.get('/api/sale/pop', userCtrl.isAuth,  saleCtrl.readpop);
+app.get('/api/sale/:id', userCtrl.isAuth,  saleCtrl.readid);
+app.get('/api/sale/pop/:id', userCtrl.isAuth,  saleCtrl.readidpop);
+app.put('/api/sale/:id', userCtrl.isAuth,  saleCtrl.update);
+app.delete('/api/sale/:id', userCtrl.isAuth,  saleCtrl.destroy);
 
 
 //report api
-app.get('/api/report/newClients', reportCtrl.newClientsReport);
-app.get('/api/report/newClientsRebooked', reportCtrl.newClientRebookedReport);
-app.get('/api/report/salesToday', reportCtrl.salesTodayReport);
-app.get('/api/report/salesDay/:id', reportCtrl.salesDayReport);
-app.get('/api/report/salesThisMonth', reportCtrl.salesThisMonthReport);
-app.get('/api/report/salesMonth/:id', reportCtrl.salesMonthReport);
-app.get('/api/report/salesThisYear', reportCtrl.salesThisYearReport);
-app.get('/api/report/salesYear/:id', reportCtrl.saleYearReport);
+app.get('/api/report/newClients', userCtrl.isAuth,  reportCtrl.newClientsReport);
+app.get('/api/report/newClientsRebooked', userCtrl.isAuth,  reportCtrl.newClientRebookedReport);
+app.get('/api/report/salesToday', userCtrl.isAuth,  reportCtrl.salesTodayReport);
+app.get('/api/report/salesDay/:id', userCtrl.isAuth,  reportCtrl.salesDayReport);
+app.get('/api/report/salesThisMonth', userCtrl.isAuth,  reportCtrl.salesThisMonthReport);
+app.get('/api/report/salesMonth/:id', userCtrl.isAuth,  reportCtrl.salesMonthReport);
+app.get('/api/report/salesThisYear', userCtrl.isAuth,  reportCtrl.salesThisYearReport);
+app.get('/api/report/salesYear/:id', userCtrl.isAuth,  reportCtrl.saleYearReport);
 
 
 //calander api
-app.get('/api/calander/todaysAppointments', calanderCtrl.todaysAppointments);
-app.get('/api/calander/dayAppointments/:id', calanderCtrl.dayAppointments);
-app.get('/api/calander/stylistAppointments/:id', calanderCtrl.stylistAppointments);
-app.get('/api/calander/stylistWeekAppointments/:id', calanderCtrl.stylistWeekAppointments);
+app.get('/api/calander/todaysAppointments', userCtrl.isAuth,  calanderCtrl.todaysAppointments);
+app.get('/api/calander/dayAppointments/:id', userCtrl.isAuth,  calanderCtrl.dayAppointments);
+app.get('/api/calander/stylistAppointments/:id', userCtrl.isAuth,  calanderCtrl.stylistAppointments);
+app.get('/api/calander/stylistWeekAppointments/:id', userCtrl.isAuth,  calanderCtrl.stylistWeekAppointments);
 
 
 
