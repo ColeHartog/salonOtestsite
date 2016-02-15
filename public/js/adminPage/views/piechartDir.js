@@ -33,11 +33,11 @@ var pie = d3.layout.pie()
             var data = [
                 {
                     population: scope.rebookedClients.length,
-                    age: 'Rebooked'
+                    age: 'Rebooked ' + scope.rebookedClients.length.toString()
                 },
                 {
                     population: (_.difference(_.pluck(scope.newClients,'_id'), _.pluck(scope.rebookedClients,'_id'))).length,
-                    age: 'Not Rebooked'
+                    age: 'Not Rebooked ' + ((_.difference(_.pluck(scope.newClients,'_id'), _.pluck(scope.rebookedClients,'_id'))).length).toString()
                 }
             ];
             console.log(scope.newClients, scope.rebookedClients);

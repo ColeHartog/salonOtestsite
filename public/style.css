@@ -1005,7 +1005,7 @@ select {
     color: rgb(253, 253, 253);
     padding: 3%;
     
-    
+    z-index: 1;
     position: fixed;
     top: 35%;
     left: 42.35%;
@@ -1849,7 +1849,7 @@ highlight {
     top: 5px;
     color: rgba(253, 253, 253, 1);
     transition: color .25s ease;
-    z-index: 12;
+    z-index: 1;
 }
 
 .appointmentX:hover {
